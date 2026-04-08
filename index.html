@@ -169,8 +169,10 @@
     .grid-cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 18px;
-      margin-top: 24px;
+      gap: 1px;
+      margin-top: 40px;
+      background: var(--line);
+      border: 1px solid var(--line);
     }
     .card {
       background: rgba(255,255,255,.02);
@@ -243,25 +245,78 @@
     .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
     /* Expertise cards enhanced */
     .card-expert {
-      background: rgba(255,255,255,.02);
-      border: 1px solid var(--line);
-      padding: 26px 28px;
-      box-shadow: var(--shadow);
+      background: var(--panel);
+      border: none;
+      padding: 32px 28px 28px;
       display: flex;
       flex-direction: column;
       gap: 0;
-      transition: border-color .22s ease;
+      transition: background .2s ease;
+      position: relative;
     }
     .card-expert:hover {
-      border-color: rgba(201,171,103,.38);
+      background: #0f0f0f;
+    }
+    .card-expert::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(201,171,103,.45), transparent);
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+    .card-expert:hover::before { opacity: 1; }
+    .card-expert-icon {
+      position: absolute;
+      top: 26px; right: 26px;
+      width: 28px; height: 28px;
+      pointer-events: none;
+    }
+    .card-expert-icon svg {
+      width: 28px; height: 28px;
+      fill: none;
+      stroke: rgba(201,171,103,.28);
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke .2s ease;
+    }
+    .card-expert:hover .card-expert-icon svg {
+      stroke: rgba(201,171,103,.65);
     }
     .card-expert .card-num {
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .card-expert .card-tag {
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(201,171,103,.4);
+      font-weight: 500;
+      border-left: 1px solid rgba(201,171,103,.18);
+      padding-left: 10px;
     }
     .card-expert h3 {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: 1.28;
       margin: 0 0 10px;
+      color: var(--text);
     }
     .card-expert > p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.64;
       margin: 0;
     }
     .card-scenario {
@@ -592,7 +647,8 @@
         <div class="grid-cards">
 
           <article class="card-expert">
-            <div class="card-num">01</div>
+            <span class="card-expert-icon"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="13" r="3"/><circle cx="4" cy="4" r="2"/><circle cx="22" cy="4" r="2"/><circle cx="4" cy="22" r="2"/><circle cx="22" cy="22" r="2"/><line x1="6" y1="4" x2="11" y2="11"/><line x1="20" y1="4" x2="15" y2="11"/><line x1="6" y1="22" x2="11" y2="15"/><line x1="20" y1="22" x2="15" y2="15"/></svg></span>
+            <div class="card-num">01<span class="card-tag" data-ru="Стратегия" data-en="Strategy">Стратегия</span></div>
             <h3 data-ru="AI‑стратегия и архитектура" data-en="AI Strategy & Architecture">AI‑стратегия и архитектура</h3>
             <p data-ru="Строю стратегию внедрения AI под конкретную бизнес‑модель: архитектура процессов, выбор инструментов, управляемость на каждом этапе." data-en="I build an AI implementation strategy for your specific business model: process architecture, tool selection, manageability at each stage.">Строю стратегию внедрения AI под конкретную бизнес‑модель: архитектура процессов, выбор инструментов, управляемость на каждом этапе.</p>
             <div class="card-scenario">
@@ -603,7 +659,8 @@
           </article>
 
           <article class="card-expert">
-            <div class="card-num">02</div>
+            <span class="card-expert-icon"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="9" width="16" height="12" rx="2"/><line x1="9" y1="9" x2="9" y2="6"/><line x1="17" y1="9" x2="17" y2="6"/><line x1="9" y1="6" x2="17" y2="6"/><circle cx="9.5" cy="14" r="1.2"/><circle cx="16.5" cy="14" r="1.2"/><line x1="10.5" y1="17.5" x2="15.5" y2="17.5"/></svg></span>
+            <div class="card-num">02<span class="card-tag" data-ru="Агенты" data-en="Agents">Агенты</span></div>
             <h3 data-ru="Нейроагенты и автоматизация" data-en="AI Agents & Automation">Нейроагенты и автоматизация</h3>
             <p data-ru="Проектирую и запускаю AI‑агентов под конкретные бизнес‑задачи: мониторинг, аналитика, генерация лидов, операционная поддержка решений." data-en="I design and deploy AI agents for specific business tasks: monitoring, analytics, lead generation, operational decision support.">Проектирую и запускаю AI‑агентов под конкретные бизнес‑задачи: мониторинг, аналитика, генерация лидов, операционная поддержка решений.</p>
             <div class="card-scenario">
@@ -614,7 +671,8 @@
           </article>
 
           <article class="card-expert">
-            <div class="card-num">03</div>
+            <span class="card-expert-icon"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="13" r="10"/><circle cx="13" cy="13" r="1.5"/><polygon points="13,5 15,12 13,13 11,12"/><polygon points="13,21 11,14 13,13 15,14"/></svg></span>
+            <div class="card-num">03<span class="card-tag" data-ru="Консалтинг" data-en="Consulting">Консалтинг</span></div>
             <h3 data-ru="Стратегический консалтинг" data-en="Strategic Consulting">Стратегический консалтинг</h3>
             <p data-ru="30 лет в стратегии, M&amp;A и инфраструктурных проектах. Работаю на уровне управленческих решений — не отдельных инструментов." data-en="30 years in strategy, M&amp;A and infrastructure projects. I work at the level of management decisions — not individual tools.">30 лет в стратегии, M&amp;A и инфраструктурных проектах. Работаю на уровне управленческих решений — не отдельных инструментов.</p>
             <div class="card-scenario">
@@ -625,7 +683,8 @@
           </article>
 
           <article class="card-expert">
-            <div class="card-num">04</div>
+            <span class="card-expert-icon"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="15" y="3" width="8" height="8" rx="1"/><rect x="3" y="15" width="8" height="8" rx="1"/><rect x="15" y="15" width="8" height="8" rx="1"/></svg></span>
+            <div class="card-num">04<span class="card-tag" data-ru="Методология" data-en="Methodology">Методология</span></div>
             <h3 data-ru="Методология FABRIKA BIG3" data-en="FABRIKA BIG3 Methodology">Методология FABRIKA BIG3</h3>
             <p data-ru="Работаю по авторской системе стратегического анализа с четырьмя режимами: диагностика, анализ, проектирование, реализация. Каждый этап даёт конкретный артефакт." data-en="I work using a proprietary strategic analysis system with four modes: diagnostics, analysis, design, implementation. Each stage produces a concrete artefact.">Работаю по авторской системе стратегического анализа с четырьмя режимами: диагностика, анализ, проектирование, реализация. Каждый этап даёт конкретный артефакт.</p>
             <div class="card-scenario">
@@ -636,7 +695,8 @@
           </article>
 
           <article class="card-expert">
-            <div class="card-num">05</div>
+            <span class="card-expert-icon"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><polygon points="13,3 24,22 2,22"/><line x1="13" y1="10" x2="13" y2="16"/><circle cx="13" cy="19" r="0.8"/></svg></span>
+            <div class="card-num">05<span class="card-tag" data-ru="Право и риски" data-en="Law & Risk">Право и риски</span></div>
             <h3 data-ru="AI с учётом правовых рисков" data-en="AI with Legal Risk Management">AI с учётом правовых рисков</h3>
             <p data-ru="Внедряю AI‑решения с учётом юридических ограничений, контрактного управления и комплаенс‑требований. Актуально для энергетики, финансов, инфраструктуры." data-en="I implement AI solutions accounting for legal constraints, contract management and compliance. Relevant for energy, finance and infrastructure.">Внедряю AI‑решения с учётом юридических ограничений, контрактного управления и комплаенс‑требований. Актуально для энергетики, финансов, инфраструктуры.</p>
             <div class="card-scenario">
@@ -647,7 +707,8 @@
           </article>
 
           <article class="card-expert">
-            <div class="card-num">06</div>
+            <span class="card-expert-icon"><svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="10" r="5"/><path d="M6,22 C6,17 20,17 20,22"/><line x1="13" y1="15" x2="13" y2="18"/></svg></span>
+            <div class="card-num">06<span class="card-tag" data-ru="Обучение" data-en="Training">Обучение</span></div>
             <h3 data-ru="Обучение и онлайн‑программы" data-en="Training & Online Programs">Обучение и онлайн‑программы</h3>
             <p data-ru="Провожу программы по практическому применению AI в управлении и консалтинге. Система сертификации ZG 2.0 — не теория, а операционный результат." data-en="I run programmes on practical AI application in management and consulting. The ZG 2.0 certification system — not theory, but an operational outcome.">Провожу программы по практическому применению AI в управлении и консалтинге. Система сертификации ZG 2.0 — не теория, а операционный результат.</p>
             <div class="card-scenario">
@@ -808,9 +869,7 @@
             <div>
               <div class="mini" data-ru="Бесплатно · Без обязательств" data-en="Free · No obligations">Бесплатно · Без обязательств</div>
               <h2 style="margin-top:12px;" data-ru="30 минут, которые покажут, где лежит ваш рычаг" data-en="30 minutes that reveal where your leverage lies">30 минут, которые покажут,<br>где лежит ваш рычаг</h2>
-              <p class="hero-note" style="margin-bottom:0;">
-                Стратегическая сессия — не продажа и не презентация. Это разговор по существу о вашей конкретной ситуации.
-              </p>
+              <p class="hero-note" style="margin-bottom:0;" data-ru="Стратегическая сессия — не продажа и не презентация. Это разговор по существу о вашей конкретной ситуации." data-en="A strategy session is not a sales pitch or a presentation. It is a direct conversation about your specific situation.">Стратегическая сессия — не продажа и не презентация. Это разговор по существу о вашей конкретной ситуации.</p>
               <ul>
                 <li data-ru="Разберём вашу задачу или проблему" data-en="We will analyse your task or challenge">Разберём вашу задачу или проблему</li>
                 <li data-ru="Обозначим, где AI реально помогает, а где нет" data-en="We will identify where AI genuinely helps and where it does not">Обозначим, где AI реально помогает, а где нет</li>
