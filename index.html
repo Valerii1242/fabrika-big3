@@ -819,6 +819,197 @@
       .cases-grid { grid-template-columns: 1fr; }
       .case-card { padding: 24px 20px 22px; }
     }
+    /* ── PRODUCTS block ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1px;
+      margin-top: 40px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .product-card {
+      background: var(--panel);
+      padding: 32px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: background .2s ease;
+      cursor: pointer;
+    }
+    .product-card:hover { background: #0f0f0f; }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(201,171,103,.6), transparent);
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+    .product-card:hover::before { opacity: 1; }
+    .product-card-top {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .product-num {
+      font-size: 11px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .product-tag {
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(201,171,103,.4);
+      font-weight: 500;
+      border-left: 1px solid rgba(201,171,103,.18);
+      padding-left: 10px;
+    }
+    .product-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+      margin: 0 0 6px;
+      color: var(--gold);
+    }
+    .product-descriptor {
+      font-size: 12px;
+      letter-spacing: .12em;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .product-card > p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.64;
+      margin: 0 0 auto;
+      flex-grow: 1;
+    }
+    .product-formats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 16px 0 14px;
+    }
+    .product-format-badge {
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(201,171,103,.65);
+      border: 1px solid rgba(201,171,103,.25);
+      padding: 4px 10px;
+      font-weight: 600;
+    }
+    .product-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding: 8px 0 0;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+      transition: opacity .18s;
+    }
+    .product-cta:hover { opacity: .72; }
+    .product-cta::after { content: "→"; font-weight: 400; }
+    .product-icon {
+      position: absolute;
+      top: 26px; right: 26px;
+      width: 28px; height: 28px;
+      pointer-events: none;
+    }
+    .product-icon svg {
+      width: 28px; height: 28px;
+      fill: none;
+      stroke: rgba(201,171,103,.28);
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke .2s ease;
+    }
+    .product-card:hover .product-icon svg { stroke: rgba(201,171,103,.65); }
+    .product-card-joker {
+      background: linear-gradient(135deg, rgba(201,171,103,.07), rgba(201,171,103,.02));
+      border-top: 2px solid rgba(201,171,103,.5);
+    }
+    .product-card-joker::before {
+      background: linear-gradient(90deg, transparent, rgba(201,171,103,.9), transparent);
+    }
+    .product-card-joker h3 { font-size: 21px; }
+    .product-modal-formats {
+      margin: 20px 0;
+      border: 1px solid rgba(201,171,103,.15);
+    }
+    .product-modal-format-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      border-bottom: 1px solid rgba(201,171,103,.1);
+    }
+    .product-modal-format-row:last-child { border-bottom: none; }
+    .pmf-label {
+      padding: 12px 16px;
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      border-right: 1px solid rgba(201,171,103,.1);
+      display: flex;
+      align-items: center;
+    }
+    .pmf-desc {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .product-modal-quote {
+      margin: 24px 0 0;
+      padding: 20px 24px;
+      border-left: 3px solid var(--gold);
+      background: rgba(201,171,103,.04);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      font-style: italic;
+    }
+    .product-modal-quote cite {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+    .clarify-note {
+      font-size: 12px;
+      color: rgba(201,171,103,.45);
+      font-style: italic;
+      margin: 6px 0 0;
+    }
+    @media (max-width: 960px) {
+      .products-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 600px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .product-card { padding: 24px 20px 22px; }
+    }
   </style>
 </head>
 <body>
@@ -1368,6 +1559,181 @@
           </div>
 
           <p style="margin-top:24px;"><a class="cta" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer" data-ru="Обсудить похожую задачу →" data-en="Discuss a similar task →">Обсудить похожую задачу →</a></p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════ PRODUCTS -->
+    <section class="section" id="products">
+      <div class="wrap">
+        <div class="section-kicker" data-ru="Готовые решения" data-en="Ready-Made Solutions">Готовые решения</div>
+        <h2 data-ru="Продукты" data-en="Products">Продукты</h2>
+        <p class="audience-intro" data-ru="Не услуги под запрос — а готовые инструменты с измеримыми выходами. Каждый продукт можно применять самостоятельно или интегрировать в стратегический проект." data-en="Not services on demand — ready-made instruments with measurable outputs. Each product can be applied independently or integrated into a strategic project.">Не услуги под запрос — а готовые инструменты с измеримыми выходами. Каждый продукт можно применять самостоятельно или интегрировать в стратегический проект.</p>
+
+        <div class="products-grid">
+
+          <!-- Product 01: ZG 2.0 -->
+          <div class="product-card" onclick="openModal('modal-zg20')">
+            <span class="product-icon">
+              <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="10" r="5"/>
+                <path d="M9 10 C9 10 7 16 10 19 L14 28 L18 19 C21 16 19 10 19 10"/>
+                <line x1="11" y1="21" x2="17" y2="21"/>
+                <line x1="12" y1="24" x2="16" y2="24"/>
+              </svg>
+            </span>
+            <div class="product-card-top">
+              <span class="product-num">01</span>
+              <span class="product-tag" data-ru="Диагностика" data-en="Diagnostics">Диагностика</span>
+            </div>
+            <h3>ZG 2.0</h3>
+            <p class="product-descriptor" data-ru="Зона Гениальности" data-en="Genius Zone">Зона Гениальности</p>
+            <p data-ru="Авторская методология, которая переводит опыт и сильные действия в структуру: формулу ценности, карту зон, сценарии реализации и план на 14 дней. Не тест и не тренинг — диагностический инструмент с измеримыми выходами." data-en="A proprietary methodology that transforms real-world experience and patterns of action into a structured formula: a value map, implementation scenarios, and a 14-day action plan. Not a test or training — a diagnostic instrument with measurable outputs.">Авторская методология, которая переводит опыт и сильные действия в структуру: формулу ценности, карту зон, сценарии реализации и план на 14 дней. Не тест и не тренинг — диагностический инструмент с измеримыми выходами.</p>
+            <div class="product-formats">
+              <span class="product-format-badge">S45</span>
+              <span class="product-format-badge">S60</span>
+              <span class="product-format-badge">S90</span>
+              <span class="product-format-badge" data-ru="По запросу" data-en="On request">По запросу</span>
+            </div>
+            <button class="product-cta" data-ru="Подробнее" data-en="Learn more">Подробнее</button>
+          </div>
+
+          <!-- Product 02: AI-агенты -->
+          <div class="product-card" onclick="openModal('modal-ai-agents')">
+            <span class="product-icon">
+              <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="20" height="14" rx="2"/>
+                <circle cx="10" cy="15" r="2"/>
+                <circle cx="18" cy="15" r="2"/>
+                <line x1="10" y1="8" x2="10" y2="5"/>
+                <line x1="18" y1="8" x2="18" y2="5"/>
+                <line x1="7" y1="5" x2="21" y2="5"/>
+                <line x1="13" y1="17" x2="15" y2="17"/>
+              </svg>
+            </span>
+            <div class="product-card-top">
+              <span class="product-num">02</span>
+              <span class="product-tag" data-ru="Автоматизация" data-en="Automation">Автоматизация</span>
+            </div>
+            <h3 data-ru="AI-агенты" data-en="AI Agents">AI-агенты</h3>
+            <p class="product-descriptor" data-ru="Готовые решения под задачи" data-en="Ready-made task solutions">Готовые решения под задачи</p>
+            <p data-ru="Операционные единицы, которые самостоятельно выполняют задачи, собирают данные и принимают решения в рамках заданных правил. Проектируются под конкретный бизнес-процесс — не как эксперимент, а как рабочий инструмент." data-en="Operational units that independently execute tasks, collect data, and make decisions within defined rules. Designed for specific business processes — not as an experiment, but as a working tool.">Операционные единицы, которые самостоятельно выполняют задачи, собирают данные и принимают решения в рамках заданных правил. Проектируются под конкретный бизнес-процесс — не как эксперимент, а как рабочий инструмент.</p>
+            <div class="product-formats">
+              <span class="product-format-badge" data-ru="Мониторинг" data-en="Monitoring">Мониторинг</span>
+              <span class="product-format-badge" data-ru="Аналитика" data-en="Analytics">Аналитика</span>
+              <span class="product-format-badge" data-ru="Под задачу" data-en="Custom">Под задачу</span>
+            </div>
+            <button class="product-cta" data-ru="Подробнее" data-en="Learn more">Подробнее</button>
+          </div>
+
+          <!-- Product 03: FABRIKA BIG3 — Joker -->
+          <div class="product-card product-card-joker" onclick="openModal('modal-fabrika')">
+            <span class="product-icon">
+              <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="14,2 17,11 26,11 19,17 22,26 14,20 6,26 9,17 2,11 11,11"/>
+              </svg>
+            </span>
+            <div class="product-card-top">
+              <span class="product-num">03</span>
+              <span class="product-tag" data-ru="Методология" data-en="Methodology">Методология</span>
+            </div>
+            <h3>FABRIKA BIG3</h3>
+            <p class="product-descriptor" data-ru="Системообразующий инструмент" data-en="The core instrument">Системообразующий инструмент</p>
+            <p data-ru="Авторская система стратегического анализа с четырьмя рабочими режимами. Объединяет все инструменты и продукты в единую архитектуру. Это не один из продуктов — это логика, по которой работает вся система." data-en="A proprietary strategic analysis system with four working modes. Unifies all tools and products into a single architecture. Not one of the products — the logic by which the entire system operates.">Авторская система стратегического анализа с четырьмя рабочими режимами. Объединяет все инструменты и продукты в единую архитектуру. Это не один из продуктов — это логика, по которой работает вся система.</p>
+            <div class="product-formats">
+              <span class="product-format-badge">ZG 2.0</span>
+              <span class="product-format-badge">AI-агенты</span>
+              <span class="product-format-badge" data-ru="Стратегия" data-en="Strategy">Стратегия</span>
+            </div>
+            <button class="product-cta" data-ru="Открыть систему" data-en="Open the system">Открыть систему</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL: ZG 2.0 -->
+    <div class="modal-overlay" id="modal-zg20" onclick="if(event.target===this)closeModal('modal-zg20')">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-zg20')">✕</button>
+        <div class="modal-kicker" data-ru="Продукт 01 · Диагностика" data-en="Product 01 · Diagnostics">Продукт 01 · Диагностика</div>
+        <h2 class="modal-title">ZG 2.0 &mdash; <span data-ru="Зона Гениальности" data-en="Genius Zone">Зона Гениальности</span></h2>
+        <div class="modal-body">
+          <p data-ru="ZG 2.0 — авторский диагностический протокол. Инструмент работает по логике: факты и эпизоды из реальной практики → выявление устойчивых паттернов → формулировка ценности → синтез в персональную стратегию → верифицируемый план проверки." data-en="ZG 2.0 is a proprietary diagnostic protocol. The methodology operates on a strict logic: real facts and episodes from your practice → identification of consistent patterns → articulation of value → synthesis into a personal strategy → a verifiable action plan.">ZG 2.0 — авторский диагностический протокол. Инструмент работает по логике: факты и эпизоды из реальной практики → выявление устойчивых паттернов → формулировка ценности → синтез в персональную стратегию → верифицируемый план проверки.</p>
+          <p class="clarify-note" data-ru="Методология сертифицирована и лицензируется. [Детали сертификации — в работе]" data-en="The methodology is certified and licensed. [Certification details — in preparation]">Методология сертифицирована и лицензируется. [Детали сертификации — в работе]</p>
+          <p><strong data-ru="Для кого:" data-en="Who it's for:">Для кого:</strong></p>
+          <ul>
+            <li data-ru="Собственники бизнеса — переосмысление роли, масштабирование, смена вектора" data-en="Business owners — rethinking your role, scaling, or shifting direction">Собственники бизнеса — переосмысление роли, масштабирование, смена вектора</li>
+            <li data-ru="Топ-менеджеры / C-level — карьерный переход, следующая высокая роль, личная стратегия" data-en="Senior executives / C-level — career transition, next high-impact role, personal strategy">Топ-менеджеры / C-level — карьерный переход, следующая высокая роль, личная стратегия</li>
+            <li data-ru="Инвесторы и советники — позиционирование экспертизы, оценка партнёров, портфель ролей" data-en="Investors and advisors — positioning your expertise, evaluating partners, building a portfolio of roles">Инвесторы и советники — позиционирование экспертизы, оценка партнёров, портфель ролей</li>
+          </ul>
+          <p><strong data-ru="Форматы:" data-en="Formats:">Форматы:</strong></p>
+          <div class="product-modal-formats">
+            <div class="product-modal-format-row">
+              <div class="pmf-label">S45</div>
+              <div class="pmf-desc" data-ru="Экспресс · Первичная гипотеза ядра + 14-дневный эксперимент" data-en="Express · Initial core hypothesis + 14-day experiment">Экспресс · Первичная гипотеза ядра + 14-дневный эксперимент</div>
+            </div>
+            <div class="product-modal-format-row">
+              <div class="pmf-label">S60</div>
+              <div class="pmf-desc" data-ru="Стандарт · Полный цикл: сбор опор → диагностика → Документ-Навигатор + план 14 дней" data-en="Standard · Full cycle: anchors → diagnostics → Navigator Document + 14-day plan">Стандарт · Полный цикл: сбор опор → диагностика → Документ-Навигатор + план 14 дней</div>
+            </div>
+            <div class="product-modal-format-row">
+              <div class="pmf-label">S90</div>
+              <div class="pmf-desc" data-ru="Углублённый · Добавляется слой R4: работа с ролью, лейтмотив, детальная формулировка «для кого»" data-en="In-depth · Adds R4 layer: role work, leitmotif, detailed 'for whom' articulation">Углублённый · Добавляется слой R4: работа с ролью, лейтмотив, детальная формулировка «для кого»</div>
+            </div>
+          </div>
+          <div class="result-line">
+            <strong data-ru="Результат — Документ-Навигатор:" data-en="Output — Navigator Document:">Результат — Документ-Навигатор:</strong>
+            <span data-ru=" Формула Зоны Гениальности · Карта 5 зон · Диагностика «Роль vs Живое» · 3–5 сценариев реализации · План гипотез на 14 дней · Рекомендации по монетизации ценности" data-en=" Genius Zone formula · Five-zone map · Role vs. Alive diagnosis · 3–5 implementation scenarios · 14-day hypothesis plan · Value monetisation recommendations"> Формула Зоны Гениальности · Карта 5 зон · Диагностика «Роль vs Живое» · 3–5 сценариев реализации · План гипотез на 14 дней · Рекомендации по монетизации ценности</span>
+          </div>
+          <div class="product-modal-quote">
+            <span data-ru="«Большинство инструментов говорят вам, кто вы есть. ZG 2.0 говорит, за что вам готовы платить — и почему именно вы.»" data-en="&ldquo;Most tools tell you who you are. ZG 2.0 tells you what people will pay you for — and why specifically you.&rdquo;">«Большинство инструментов говорят вам, кто вы есть. ZG 2.0 говорит, за что вам готовы платить — и почему именно вы.»</span>
+            <cite data-ru="Валерий Корешков · FABRIKA BIG3" data-en="Valerii Koreshkov · FABRIKA BIG3">Валерий Корешков · FABRIKA BIG3</cite>
+          </div>
+          <p style="margin-top:24px;" data-ru="Первичная консультация: определяем формат и ожидания. 30 минут, без обязательств." data-en="Initial consultation: we define the format and expectations. 30 minutes, no obligation.">Первичная консультация: определяем формат и ожидания. 30 минут, без обязательств.</p>
+          <p><a class="cta" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer" data-ru="Записаться →" data-en="Book a call →">Записаться →</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: AI-агенты -->
+    <div class="modal-overlay" id="modal-ai-agents" onclick="if(event.target===this)closeModal('modal-ai-agents')">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-ai-agents')">✕</button>
+        <div class="modal-kicker" data-ru="Продукт 02 · Автоматизация" data-en="Product 02 · Automation">Продукт 02 · Автоматизация</div>
+        <h2 class="modal-title" data-ru="AI-агенты — готовые решения под задачи" data-en="AI Agents — Ready-Made Task Solutions">AI-агенты — готовые решения под задачи</h2>
+        <div class="modal-body">
+          <p data-ru="Нейроагент — это не чат-бот. Это операционная единица, которая самостоятельно выполняет задачи, собирает данные и принимает решения в рамках заданных правил. Проектируется под конкретный бизнес-процесс — с архитектурой, управляемостью и измеримым результатом." data-en="An AI agent is not a chatbot. It is an operational unit that independently executes tasks, collects data, and makes decisions within defined rules. Designed for a specific business process — with architecture, controllability, and measurable outcomes.">Нейроагент — это не чат-бот. Это операционная единица, которая самостоятельно выполняет задачи, собирает данные и принимает решения в рамках заданных правил. Проектируется под конкретный бизнес-процесс — с архитектурой, управляемостью и измеримым результатом.</p>
+          <p><strong data-ru="Типовые решения:" data-en="Typical solutions:">Типовые решения:</strong></p>
+          <ul>
+            <li data-ru="Агент мониторинга — автоматический сбор и анализ данных по заданным источникам с ежедневной сводкой и рекомендациями действий" data-en="Monitoring agent — automated data collection and analysis from defined sources with daily briefing and action recommendations">Агент мониторинга — сбор и анализ данных, ежедневная сводка и рекомендации</li>
+            <li data-ru="Аналитический агент — структурированная обработка входящей информации, выявление паттернов, генерация отчётов" data-en="Analytics agent — structured processing of incoming information, pattern recognition, report generation">Аналитический агент — обработка информации, паттерны, отчёты</li>
+            <li data-ru="Агент под задачу — проектируется под конкретный бизнес-процесс клиента после диагностики" data-en="Custom agent — designed for a specific client business process after diagnostics">Агент под задачу — проектируется после диагностики конкретного процесса</li>
+          </ul>
+          <div class="result-line" data-ru="Пример из практики: консалтинговая компания — ручной мониторинг занимал 2–3 часа ежедневно у двух аналитиков. AI-агент полностью заменил этот процесс. Экономия: ~40 ч/мес. Качество выше — агент не устаёт и не пропускает источники." data-en="From practice: a consulting firm where manual monitoring took 2–3 hours daily from two analysts. The AI agent replaced this process entirely. Savings: ~40 hrs/month. Higher quality — the agent never tires and misses no sources.">Пример из практики: консалтинговая компания — ручной мониторинг занимал 2–3 часа ежедневно у двух аналитиков. AI-агент полностью заменил этот процесс. Экономия: ~40 ч/мес. Качество выше — агент не устаёт и не пропускает источники.</div>
+          <p style="margin-top:24px;"><a class="cta" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer" data-ru="Обсудить задачу →" data-en="Discuss the task →">Обсудить задачу →</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: FABRIKA BIG3 -->
+    <div class="modal-overlay" id="modal-fabrika" onclick="if(event.target===this)closeModal('modal-fabrika')">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-fabrika')">✕</button>
+        <div class="modal-kicker" data-ru="Продукт 03 · Методология" data-en="Product 03 · Methodology">Продукт 03 · Методология</div>
+        <h2 class="modal-title">FABRIKA BIG3</h2>
+        <div class="modal-body">
+          <p data-ru="FABRIKA BIG3 — авторская система стратегического анализа. Не консультация, не тренинг — инструмент с конкретными рабочими режимами и измеримыми выходами. Это не один из продуктов — это логика, по которой работает вся система." data-en="FABRIKA BIG3 is a proprietary strategic analysis system. Not a consultation, not a training — a tool with specific working modes that deliver measurable outputs. Not one of the products — the logic by which the entire system operates.">FABRIKA BIG3 — авторская система стратегического анализа. Не консультация, не тренинг — инструмент с конкретными рабочими режимами и измеримыми выходами. Это не один из продуктов — это логика, по которой работает вся система.</p>
+          <p><strong data-ru="Четыре рабочих режима:" data-en="Four working modes:">Четыре рабочих режима:</strong></p>
+          <ul>
+            <li data-ru="Диагностика — карта текущего состояния: где вы, что работает, что блокирует" data-en="Diagnostics — current state map: where you are, what works, what blocks">Диагностика — карта текущего состояния</li>
+            <li data-ru="Анализ — выявление точек роста и стратегических рисков" data-en="Analysis — identifying growth points and strategic risks">Анализ — точки роста и стратегические риски</li>
+            <li data-ru="Проектирование — формирование сценариев и архитектуры решений" data-en="Design — forming scenarios and solution architecture">Проектирование — сценарии и архитектура решений</li>
+            <li data-ru="Реализация — управляемое внедрение с контролем результата" data-en="Implementation — managed deployment with result control">Реализация — управляемое внедрение с контролем</li>
+          </ul>
+          <div class="result-line" data-ru="ZG 2.0 и AI-агенты — конкретные инструменты внутри системы. Стратегический консалтинг, M&A, энергетические проекты — области применения. FABRIKA BIG3 — архитектура, которая связывает всё это в управляемый результат." data-en="ZG 2.0 and AI agents are specific instruments within the system. Strategic consulting, M&A, energy projects — areas of application. FABRIKA BIG3 is the architecture that connects all of this into a manageable outcome.">ZG 2.0 и AI-агенты — конкретные инструменты внутри системы. Стратегический консалтинг, M&A, энергетические проекты — области применения. FABRIKA BIG3 — архитектура, которая связывает всё это в управляемый результат.</div>
+          <p style="margin-top:24px;"><a class="cta" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer" data-ru="Обсудить применение →" data-en="Discuss application →">Обсудить применение →</a></p>
         </div>
       </div>
     </div>
