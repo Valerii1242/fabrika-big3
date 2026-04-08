@@ -675,6 +675,150 @@
       .audience-filter { grid-template-columns: 1fr; gap: 12px 0; padding: 20px; }
       .audience-filter-label { border-right: none; border-bottom: 1px solid rgba(201,171,103,.18); padding-right: 0; padding-bottom: 10px; }
     }
+    /* ── CASES block ── */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1px;
+      margin-top: 40px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .case-card {
+      background: var(--panel);
+      padding: 32px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: background .2s ease;
+      cursor: pointer;
+    }
+    .case-card:hover { background: #0f0f0f; }
+    .case-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(201,171,103,.45), transparent);
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+    .case-card:hover::before { opacity: 1; }
+    .case-card-top {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .case-num {
+      font-size: 11px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .case-tag {
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(201,171,103,.4);
+      font-weight: 500;
+      border-left: 1px solid rgba(201,171,103,.18);
+      padding-left: 10px;
+    }
+    .case-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: 1.28;
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+    .case-card > p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.64;
+      margin: 0 0 auto;
+      flex-grow: 1;
+    }
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 16px;
+    }
+    .case-badge {
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(201,171,103,.55);
+      border: 1px solid rgba(201,171,103,.2);
+      padding: 3px 9px;
+      font-weight: 600;
+    }
+    .case-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding: 8px 0 0;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+      transition: opacity .18s;
+    }
+    .case-cta:hover { opacity: .72; }
+    .case-cta::after { content: "→"; font-weight: 400; }
+    .case-icon {
+      position: absolute;
+      top: 26px; right: 26px;
+      width: 28px; height: 28px;
+      pointer-events: none;
+    }
+    .case-icon svg {
+      width: 28px; height: 28px;
+      fill: none;
+      stroke: rgba(201,171,103,.28);
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke .2s ease;
+    }
+    .case-card:hover .case-icon svg { stroke: rgba(201,171,103,.65); }
+    /* Case modal extras */
+    .case-modal-quote {
+      margin: 24px 0 0;
+      padding: 20px 24px;
+      border-left: 3px solid var(--gold);
+      background: rgba(201,171,103,.04);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      font-style: italic;
+    }
+    .case-modal-quote cite {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+    @media (max-width: 960px) {
+      .cases-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 600px) {
+      .cases-grid { grid-template-columns: 1fr; }
+      .case-card { padding: 24px 20px 22px; }
+    }
   </style>
 </head>
 <body>
@@ -1131,6 +1275,102 @@
 
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════════════════════ CASES -->
+    <section class="section" id="cases">
+      <div class="wrap">
+        <div class="section-kicker" data-ru="Практика" data-en="Practice">Практика</div>
+        <h2 data-ru="Кейсы" data-en="Cases">Кейсы</h2>
+        <p class="audience-intro" data-ru="Реальные задачи. Полный аналитический цикл. Без ретуши — включая случаи, когда готовая стратегия ждёт своего исполнителя." data-en="Real tasks. Full analytical cycle. No retouching — including cases where a completed strategy still awaits its executor.">Реальные задачи. Полный аналитический цикл. Без ретуши — включая случаи, когда готовая стратегия ждёт своего исполнителя.</p>
+
+        <div class="cases-grid">
+
+          <!-- Case 01 -->
+          <div class="case-card" onclick="openModal('modal-case-africa')">
+            <span class="case-icon">
+              <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                <!-- Контур Африки -->
+                <path d="M11 3 C9 3 8 4 8 5.5 C8 7 7 7.5 7 9 C7 10.5 8 11 8 12.5 C8 14 7 15 7.5 16.5 C8 18 9 18.5 9.5 20 C10 21.5 10 23 11 24 C12 25 13 24.5 14 23.5 C15 22.5 15.5 21 16 20 C16.5 19 17.5 18.5 18 17.5 C18.5 16.5 18 15.5 18.5 14.5 C19 13.5 20 13 20 12 C20 11 19 10.5 19 9.5 C19 8.5 19.5 8 19 7 C18.5 6 17.5 6 17 5 C16.5 4 16 3.5 15 3.5 C14 3.5 13.5 4 13 4 C12.5 4 12 3 11 3 Z" stroke-width="1.1"/>
+                <!-- Лампочка (маленькая, вверху справа) -->
+                <circle cx="22" cy="6" r="2.8" stroke-width="1"/>
+                <line x1="22" y1="8.8" x2="22" y2="10.2" stroke-width="1"/>
+                <line x1="20.8" y1="9" x2="23.2" y2="9" stroke-width="1"/>
+                <line x1="21" y1="5" x2="20" y2="4" stroke-width="1"/>
+                <line x1="23" y1="5" x2="24" y2="4" stroke-width="1"/>
+                <line x1="24.8" y1="6" x2="25.8" y2="6" stroke-width="1"/>
+                <line x1="19.2" y1="6" x2="18.2" y2="6" stroke-width="1"/>
+              </svg>
+            </span>
+            <div class="case-card-top">
+              <span class="case-num">01</span>
+              <span class="case-tag" data-ru="Энергетика · Африка" data-en="Energy · Africa">Энергетика · Африка</span>
+            </div>
+            <h3 data-ru="Стратегия комбинированного энергоснабжения Африки" data-en="Africa Combined Energy Supply Strategy">Стратегия комбинированного энергоснабжения Африки</h3>
+            <p data-ru="Полный аналитический цикл по энергетическому дефициту континента: от типологии 50+ стран до финансовой архитектуры и плана внедрения на горизонт 2025–2045." data-en="Full analytical cycle on the continent's energy deficit: from typology of 50+ countries to financing architecture and implementation roadmap through 2025–2045.">Полный аналитический цикл по энергетическому дефициту континента: от типологии 50+ стран до финансовой архитектуры и плана внедрения на горизонт 2025–2045.</p>
+            <div class="case-meta">
+              <span class="case-badge" data-ru="Стратегический анализ" data-en="Strategic Analysis">Стратегический анализ</span>
+              <span class="case-badge" data-ru="Финансовая архитектура" data-en="Financial Architecture">Финансовая архитектура</span>
+              <span class="case-badge" data-ru="10 документов" data-en="10 Documents">10 документов</span>
+            </div>
+            <button class="case-cta" data-ru="Читать кейс" data-en="Read case">Читать кейс</button>
+          </div>
+
+          <!-- Case 02 — placeholder -->
+          <div class="case-card" style="opacity:.45;pointer-events:none;">
+            <div class="case-card-top">
+              <span class="case-num">02</span>
+              <span class="case-tag" data-ru="Скоро" data-en="Coming soon">Скоро</span>
+            </div>
+            <h3 data-ru="Следующий кейс готовится" data-en="Next case in preparation">Следующий кейс готовится</h3>
+            <p data-ru="Реальная практика из M&A или AI-трансформации. В работе." data-en="Real practice from M&A or AI transformation. In preparation.">Реальная практика из M&A или AI-трансформации. В работе.</p>
+          </div>
+
+          <!-- Case 03 — placeholder -->
+          <div class="case-card" style="opacity:.45;pointer-events:none;">
+            <div class="case-card-top">
+              <span class="case-num">03</span>
+              <span class="case-tag" data-ru="Скоро" data-en="Coming soon">Скоро</span>
+            </div>
+            <h3 data-ru="Следующий кейс готовится" data-en="Next case in preparation">Следующий кейс готовится</h3>
+            <p data-ru="Реальная практика из стратегического консалтинга. В работе." data-en="Real practice from strategic consulting. In preparation.">Реальная практика из стратегического консалтинга. В работе.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ MODAL: Case Africa -->
+    <div class="modal-overlay" id="modal-case-africa" onclick="if(event.target===this)closeModal('modal-case-africa')">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-case-africa')">✕</button>
+        <div class="modal-kicker" data-ru="Кейс 01 · Энергетика · Африка" data-en="Case 01 · Energy · Africa">Кейс 01 · Энергетика · Африка</div>
+        <h2 class="modal-title" data-ru="Стратегия комбинированного энергоснабжения Африки: полный аналитический цикл" data-en="Africa Combined Energy Supply Strategy: Full Analytical Cycle">Стратегия комбинированного энергоснабжения Африки: полный аналитический цикл</h2>
+        <div class="modal-body" id="modal-case-africa-body">
+          <!-- RU content shown by default -->
+          <p><strong data-ru="Контекст." data-en="Context.">Контекст.</strong> <span data-ru="Запрос на исследование: как решать проблему энергетического дефицита в странах Африки — стратегически, реалистично, с учётом инвестиционных реалий." data-en="The assignment: how to address Africa's energy deficit — strategically, realistically, within actual investment constraints.">Запрос на исследование: как решать проблему энергетического дефицита в странах Африки — стратегически, реалистично, с учётом инвестиционных реалий.</span></p>
+
+          <p><strong data-ru="Задача." data-en="The task.">Задача.</strong> <span data-ru="Не обзор и не доклад. Работающая стратегическая рамка: что внедрять, в какой последовательности, кому, на каких деньгах — и как упаковать это для разных аудиторий." data-en="Not a survey. Not a white paper. A working strategic framework: what to deploy, in what sequence, for whom, on what financing — and how to communicate it to different audiences.">Не обзор и не доклад. Работающая стратегическая рамка: что внедрять, в какой последовательности, кому, на каких деньгах — и как упаковать это для разных аудиторий.</span></p>
+
+          <p><strong data-ru="Что было сделано." data-en="What was done.">Что было сделано.</strong> <span data-ru="Проведена типологизация 50+ стран по энергетической готовности и разработана трёхуровневая модель: off-grid → mini-grid → grid-кластеры. Построен поэтапный план реализации на горизонт 2025–2045 с архитектурой финансирования через blended finance, DFI и PAYGO. Отдельно — реестр рисков с механизмами митигации и контент-стратегия для министерств, доноров и инвесторов." data-en="Classified 50+ countries by energy readiness and built a three-tier model: off-grid → mini-grid → grid clusters. Developed a phased implementation roadmap through 2025–2045 with a financing architecture across blended finance, DFIs, and PAYGO. Separately: a risk register with mitigation tools and a content strategy targeting ministries, donors, and investors.">Проведена типологизация 50+ стран по энергетической готовности и разработана трёхуровневая модель: off-grid → mini-grid → grid-кластеры. Построен поэтапный план реализации на горизонт 2025–2045 с архитектурой финансирования через blended finance, DFI и PAYGO. Отдельно — реестр рисков с механизмами митигации и контент-стратегия для министерств, доноров и инвесторов.</span></p>
+
+          <div class="result-line">
+            <strong data-ru="Выходы:" data-en="Deliverables:">Выходы:</strong>
+            <span data-ru=" 10 документов — мастер-стратегия, типология стран с матрицей применимости, анализ медианного сценария, архитектура сетевых кластеров, финансовые платформы, план внедрения, реестр рисков, контент-план." data-en=" 10 documents: master strategy, country typology with applicability matrix, median scenario analysis, grid cluster architecture, investment platforms, implementation roadmap, risk register, content plan."> 10 документов — мастер-стратегия, типология стран с матрицей применимости, анализ медианного сценария, архитектура сетевых кластеров, финансовые платформы, план внедрения, реестр рисков, контент-план.</span>
+          </div>
+
+          <p><strong data-ru="Результат и статус." data-en="Outcome and status.">Результат и статус.</strong> <span data-ru="Стратегия готова. Реализация — за инициатором. Разрыв между готовой аналитикой и готовностью действовать — сам по себе диагноз." data-en="The strategy is complete. Execution is on the initiating party. The gap between finished analysis and the will to act is, in itself, a finding.">Стратегия готова. Реализация — за инициатором. Разрыв между готовой аналитикой и готовностью действовать — сам по себе диагноз.</span></p>
+
+          <p><strong data-ru="Почему это важно." data-en="Why it matters.">Почему это важно.</strong> <span data-ru="За две недели — полный цикл по незнакомому рынку: от типологии участников до финансовых инструментов и коммуникации. Такой объём и такая связность — не случайность." data-en="Two weeks. An unfamiliar market. Full cycle — from participant typology to financial instruments to communications. That scope, that coherence — it doesn't happen by accident.">За две недели — полный цикл по незнакомому рынку: от типологии участников до финансовых инструментов и коммуникации. Такой объём и такая связность — не случайность.</span></p>
+
+          <div class="case-modal-quote">
+            <span data-ru="«600 миллионов человек без доступа к электроэнергии — это не гуманитарная проблема. Это инвестиционный рынок с дефицитом архитектуры. Стратегия существует. Не хватает людей, которые готовы её реализовать.»" data-en="&ldquo;600 million people without electricity is not a humanitarian problem. It&rsquo;s an investment market with a missing architecture. The strategy exists. What&rsquo;s lacking are people willing to execute it.&rdquo;">«600 миллионов человек без доступа к электроэнергии — это не гуманитарная проблема. Это инвестиционный рынок с дефицитом архитектуры. Стратегия существует. Не хватает людей, которые готовы её реализовать.»</span>
+            <cite data-ru="Валерий Корешков · FABRIKA BIG3" data-en="Valerii Koreshkov · FABRIKA BIG3">Валерий Корешков · FABRIKA BIG3</cite>
+          </div>
+
+          <p style="margin-top:24px;"><a class="cta" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer" data-ru="Обсудить похожую задачу →" data-en="Discuss a similar task →">Обсудить похожую задачу →</a></p>
+        </div>
+      </div>
+    </div>
 
   </main>
 
