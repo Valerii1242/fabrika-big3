@@ -193,11 +193,106 @@
     .process {
       display: grid;
       grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 18px;
-      margin-top: 26px;
+      gap: 1px;
+      margin-top: 40px;
+      background: var(--line);
+      border: 1px solid var(--line);
     }
-    .process .card {
-      min-height: 190px;
+    .process-step {
+      background: var(--panel);
+      padding: 32px 28px 28px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: background .2s ease;
+    }
+    .process-step:hover { background: #0f0f0f; }
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(201,171,103,.45), transparent);
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+    .process-step:hover::before { opacity: 1; }
+    .process-step-top {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .process-step-num {
+      font-size: 11px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .process-step-tag {
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(201,171,103,.4);
+      font-weight: 500;
+      border-left: 1px solid rgba(201,171,103,.18);
+      padding-left: 10px;
+    }
+    .process-step h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 10px;
+      letter-spacing: -.01em;
+      line-height: 1.2;
+    }
+    .process-step > p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.64;
+      margin: 0;
+      flex-grow: 1;
+    }
+    .process-result {
+      margin-top: 18px;
+      padding: 8px 12px;
+      border-left: 2px solid rgba(201,171,103,.4);
+      background: rgba(201,171,103,.02);
+    }
+    .process-result-label {
+      font-size: 10px;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: rgba(201,171,103,.55);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .process-result p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .process-step-icon {
+      position: absolute;
+      top: 26px; right: 26px;
+      width: 28px; height: 28px;
+      pointer-events: none;
+    }
+    .process-step-icon svg {
+      width: 28px; height: 28px;
+      fill: none;
+      stroke: rgba(201,171,103,.28);
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke .2s ease;
+    }
+    .process-step:hover .process-step-icon svg {
+      stroke: rgba(201,171,103,.65);
     }
     .offer {
       margin: 88px 0 50px;
@@ -427,7 +522,7 @@
       .lead { font-size: 20px; }
       .hero-note { font-size: 18px; }
       .grid-cards, .process { grid-template-columns: 1fr; }
-      .card, .card-expert, .offer-grid { padding: 22px; }
+      .card, .card-expert, .process-step, .offer-grid { padding: 22px; }
       .cta { width: 100%; }
       .hero-actions { align-items: stretch; }
       .ghost-link { display: inline-block; padding-top: 6px; }
@@ -837,31 +932,66 @@
       <div class="wrap">
         <div class="section-kicker" data-ru="Методология" data-en="Methodology">Методология</div>
         <h2 data-ru="Как устроена работа" data-en="How the work is structured">Как устроена<br>работа</h2>
+        <p class="audience-intro" data-ru="Четыре фиксированных этапа — каждый даёт конкретный артефакт, на который опирается следующий." data-en="Four fixed stages — each produces a concrete artefact that the next stage builds on.">Четыре фиксированных этапа — каждый даёт конкретный артефакт, на который опирается следующий.</p>
 
         <div class="process">
-          <article class="card">
-            <div class="card-num">01</div>
+
+          <article class="process-step">
+            <span class="process-step-icon"><svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="7"/><line x1="17.5" y1="17.5" x2="24" y2="24"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="12" y1="9" x2="12" y2="15"/></svg></span>
+            <div class="process-step-top">
+              <span class="process-step-num">01</span>
+              <span class="process-step-tag" data-ru="Вход" data-en="Entry">Вход</span>
+            </div>
             <h3 data-ru="Диагностика" data-en="Diagnostics">Диагностика</h3>
-            <p data-ru="Анализ текущей ситуации, бизнес‑модели и процессов. Выявление точек, где AI даёт максимальный рычаг." data-en="Analysis of the current situation, business model and processes. Identifying where AI provides maximum leverage.">Анализ текущей ситуации, бизнес‑модели и процессов. Выявление точек, где AI даёт максимальный рычаг.</p>
+            <p data-ru="Разбираю вашу бизнес‑модель, процессы и задачи. Нахожу точки, где AI даёт реальный рычаг — и отсекаю то, где он не нужен или опасен." data-en="I analyse your business model, processes and tasks. I find where AI provides real leverage — and cut what is unnecessary or risky.">Разбираю вашу бизнес‑модель, процессы и задачи. Нахожу точки, где AI даёт реальный рычаг — и отсекаю то, где он не нужен или опасен.</p>
+            <div class="process-result">
+              <span class="process-result-label" data-ru="Результат этапа" data-en="Stage output">Результат этапа</span>
+              <p data-ru="Карта приоритетов: где внедрять, что пропустить, с чего начать." data-en="Priority map: where to implement, what to skip, where to start.">Карта приоритетов: где внедрять, что пропустить, с чего начать.</p>
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-num">02</div>
+          <article class="process-step">
+            <span class="process-step-icon"><svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="22" height="22" rx="1"/><line x1="3" y1="10" x2="25" y2="10"/><line x1="3" y1="18" x2="25" y2="18"/><line x1="10" y1="3" x2="10" y2="25"/><line x1="18" y1="3" x2="18" y2="25"/></svg></span>
+            <div class="process-step-top">
+              <span class="process-step-num">02</span>
+              <span class="process-step-tag" data-ru="Проект" data-en="Design">Проект</span>
+            </div>
             <h3 data-ru="Архитектура" data-en="Architecture">Архитектура</h3>
-            <p data-ru="Проектирование решения под вашу специфику. Без универсальных шаблонов — только под конкретную задачу." data-en="Designing a solution for your specific context. No generic templates — only for a specific task.">Проектирование решения под вашу специфику. Без универсальных шаблонов — только под конкретную задачу.</p>
+            <p data-ru="Проектирую решение под вашу конкретную задачу: логика процессов, инструменты, интеграции. Без универсальных шаблонов." data-en="I design the solution for your specific task: process logic, tools, integrations. No generic templates.">Проектирую решение под вашу конкретную задачу: логика процессов, инструменты, интеграции. Без универсальных шаблонов.</p>
+            <div class="process-result">
+              <span class="process-result-label" data-ru="Результат этапа" data-en="Stage output">Результат этапа</span>
+              <p data-ru="Техническое задание и архитектурная схема решения под вашу модель." data-en="Technical specification and solution architecture for your model.">Техническое задание и архитектурная схема решения под вашу модель.</p>
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-num">03</div>
+          <article class="process-step">
+            <span class="process-step-icon"><svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><path d="M14 4 C14 4 20 6 22 14 C22 14 18 13 16 15 L13 22 L10 19 L7 16 L14 13 C16 11 15 7 14 4Z"/><line x1="10" y1="19" x2="6" y2="23"/><line x1="7" y1="16" x2="4" y2="20"/></svg></span>
+            <div class="process-step-top">
+              <span class="process-step-num">03</span>
+              <span class="process-step-tag" data-ru="Запуск" data-en="Launch">Запуск</span>
+            </div>
             <h3 data-ru="Реализация" data-en="Implementation">Реализация</h3>
-            <p data-ru="Запуск, настройка, интеграция в процессы. Сопровождение до получения измеримого результата." data-en="Launch, configuration, process integration. Support until measurable results are achieved.">Запуск, настройка, интеграция в процессы. Сопровождение до получения измеримого результата.</p>
+            <p data-ru="Запускаю, настраиваю, интегрирую в реальные процессы. Сопровождаю до момента, когда система работает стабильно и даёт измеримый результат." data-en="I launch, configure, integrate into real processes. I accompany until the system runs stably and delivers measurable results.">Запускаю, настраиваю, интегрирую в реальные процессы. Сопровождаю до момента, когда система работает стабильно и даёт измеримый результат.</p>
+            <div class="process-result">
+              <span class="process-result-label" data-ru="Результат этапа" data-en="Stage output">Результат этапа</span>
+              <p data-ru="Работающая система, встроенная в процессы — не MVP на бумаге, а живой инструмент." data-en="A working system embedded in processes — not an MVP on paper, but a live tool.">Работающая система, встроенная в процессы — не MVP на бумаге, а живой инструмент.</p>
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-num">04</div>
+          <article class="process-step">
+            <span class="process-step-icon"><svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="9"/><circle cx="14" cy="14" r="3"/><line x1="14" y1="5" x2="14" y2="11"/><line x1="14" y1="17" x2="14" y2="23"/><line x1="5" y1="14" x2="11" y2="14"/><line x1="17" y1="14" x2="23" y2="14"/><line x1="7.5" y1="7.5" x2="11.5" y2="11.5"/><line x1="16.5" y1="16.5" x2="20.5" y2="20.5"/></svg></span>
+            <div class="process-step-top">
+              <span class="process-step-num">04</span>
+              <span class="process-step-tag" data-ru="Передача" data-en="Handover">Передача</span>
+            </div>
             <h3 data-ru="Управляемость" data-en="Manageability">Управляемость</h3>
-            <p data-ru="Передача контроля команде. Система остаётся работающей без постоянного присутствия консультанта." data-en="Transferring control to the team. The system remains operational without the consultant's constant presence.">Передача контроля команде. Система остаётся работающей без постоянного присутствия консультанта.</p>
+            <p data-ru="Передаю контроль команде: документация, обучение, регламенты. Система продолжает работать без зависимости от консультанта." data-en="I transfer control to the team: documentation, training, operating procedures. The system continues without dependency on a consultant.">Передаю контроль команде: документация, обучение, регламенты. Система продолжает работать без зависимости от консультанта.</p>
+            <div class="process-result">
+              <span class="process-result-label" data-ru="Результат этапа" data-en="Stage output">Результат этапа</span>
+              <p data-ru="Команда управляет системой самостоятельно. Консультант — по запросу, не по необходимости." data-en="The team manages the system independently. Consultant on request, not by necessity.">Команда управляет системой самостоятельно. Консультант — по запросу, не по необходимости.</p>
+            </div>
           </article>
+
         </div>
 
         <div class="offer">
