@@ -1689,14 +1689,20 @@
             <button class="case-cta" data-ru="Читать кейс" data-en="Read case">Читать кейс</button>
           </div>
 
-          <!-- Case 02 — placeholder -->
-          <div class="case-card" style="opacity:.45;pointer-events:none;">
+          <!-- Case 02 — Nigeria -->
+          <div class="case-card" onclick="openModal('modal-case-nigeria')">
             <div class="case-card-top">
               <span class="case-num">02</span>
-              <span class="case-tag" data-ru="Скоро" data-en="Coming soon">Скоро</span>
+              <span class="case-tag" data-ru="Энергетика · Нигерия" data-en="Energy · Nigeria">Энергетика · Нигерия</span>
             </div>
-            <h3 data-ru="Следующий кейс готовится" data-en="Next case in preparation">Следующий кейс готовится</h3>
-            <p data-ru="Реальная практика из M&A или AI-трансформации. В работе." data-en="Real practice from M&A or AI transformation. In preparation.">Реальная практика из M&A или AI-трансформации. В работе.</p>
+            <h3 data-ru="Защита $30 млн: экспертиза энергетического проекта в Нигерии" data-en="Protecting $30M: Energy Project Due Diligence in Nigeria">Защита $30 млн: экспертиза энергетического проекта в Нигерии</h3>
+            <p data-ru="Независимый анализ выявил критические ошибки в бизнес-плане на $211 млн до момента входа в сделку." data-en="Independent analysis uncovered critical flaws in a $211M business plan before any commitments were made.">Независимый анализ выявил критические ошибки в бизнес-плане на $211 млн до момента входа в сделку.</p>
+            <div class="case-meta">
+              <span class="case-badge" data-ru="Инвестиционная экспертиза" data-en="Investment Due Diligence">Инвестиционная экспертиза</span>
+              <span class="case-badge" data-ru="Финансовый анализ" data-en="Financial Analysis">Финансовый анализ</span>
+              <span class="case-badge" data-ru="$30 млн защищено" data-en="$30M Protected">$30 млн защищено</span>
+            </div>
+            <button class="case-cta" data-ru="Читать кейс" data-en="Read case">Читать кейс</button>
           </div>
 
           <!-- Case 03 — placeholder -->
@@ -1747,7 +1753,36 @@
     </div>
 
 
-    <!-- ═══════════════════════════════════════ PRODUCTS -->
+    <!-- ═══════════════════════════════ MODAL: Case Nigeria -->
+    <div class="modal-overlay" id="modal-case-nigeria" onclick="if(event.target===this)closeModal('modal-case-nigeria')">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-case-nigeria')">✕</button>
+        <div class="modal-kicker" data-ru="Кейс 02 · Энергетика · Нигерия" data-en="Case 02 · Energy · Nigeria">Кейс 02 · Энергетика · Нигерия</div>
+        <h2 class="modal-title" data-ru="Защита $30 млн: экспертиза энергетического проекта в Нигерии" data-en="Protecting $30M: Energy Project Due Diligence in Nigeria">Защита $30 млн: экспертиза энергетического проекта в Нигерии</h2>
+        <div class="modal-body">
+
+          <p><strong data-ru="Контекст." data-en="Context.">Контекст.</strong> <span data-ru="Нигерия, штат Аква Ибом, 2025 год. Международный EPC-подрядчик представил инвестиционный бизнес-план строительства газотурбинной электростанции мощностью 200 МВт на попутном газе с терминала ExxonMobil. Оборудование — российские агрегаты ГТЭС-25П, 8 блоков по 25 МВт. Заявленный CAPEX — $211,2 млн, расход на топливо — ноль, прогнозный IRR — выше 10%." data-en="Nigeria, Akwa Ibom State, 2025. An international EPC contractor presented an investment business plan for a 200 MW gas turbine power plant using associated gas from an ExxonMobil terminal. Equipment: Russian GTES-25P units, 8 blocks of 25 MW each. Declared CAPEX — $211.2M, fuel cost — zero, projected IRR — above 10%.">Нигерия, штат Аква Ибом, 2025 год. Международный EPC-подрядчик представил инвестиционный бизнес-план строительства газотурбинной электростанции мощностью 200 МВт на попутном газе с терминала ExxonMobil. Оборудование — российские агрегаты ГТЭС-25П, 8 блоков по 25 МВт. Заявленный CAPEX — $211,2 млн, расход на топливо — ноль, прогнозный IRR — выше 10%.</span></p>
+
+          <p><strong data-ru="Задача." data-en="The task.">Задача.</strong> <span data-ru="Представитель подрядчика уже находился в Нигерии и склонялся к участию в проекте. Через доверенного посредника был запрошен независимый взгляд: обоснован ли первый транш в $30 млн. Бизнес-план выглядел убедительно внешне — реальная площадка, подтверждённая инфраструктура, профессиональное оформление. Задача — проверить системную состоятельность модели, а не найти опечатки." data-en="The contractor's representative was already in Nigeria and leaning toward participation. An independent assessment was requested through a trusted intermediary: is the first tranche of $30M justified? The business plan looked convincing on the surface — real site, confirmed infrastructure, professional presentation. The task: verify the structural soundness of the model, not find typos.">Представитель подрядчика уже находился в Нигерии и склонялся к участию в проекте. Через доверенного посредника был запрошен независимый взгляд: обоснован ли первый транш в $30 млн. Бизнес-план выглядел убедительно внешне — реальная площадка, подтверждённая инфраструктура, профессиональное оформление. Задача — проверить системную состоятельность модели, а не найти опечатки.</span></p>
+
+          <p><strong data-ru="Что было сделано." data-en="What was done.">Что было сделано.</strong> <span data-ru="Проведён трёхуровневый структурный анализ: технические решения, финансовая модель, контрактная и регуляторная обеспеченность. Выявлен десятикратный разрыв между заявленным тарифом в тексте (25 ₦/кВт·ч) и фактически использованным в расчётах (~225 ₦/кВт·ч) — ошибка, полностью инвалидирующая финансовый прогноз. Зафиксированы: отсутствие подписанного GSA/GSPA с ExxonMobil при ключевом допущении о нулевой цене газа, санкционные и сервисные риски по российскому OEM, нереалистичный график строительства и нераскрытый CAPEX по ЛЭП 132 кВ." data-en="A three-level structural analysis was conducted: technical solutions, financial model, contractual and regulatory coverage. A tenfold gap was identified between the stated tariff in the text (25 ₦/kWh) and the figure actually used in calculations (~225 ₦/kWh) — an error that entirely invalidates the financial forecast. Also flagged: no signed GSA/GSPA with ExxonMobil despite the key assumption of zero gas cost, sanctions and service risks on the Russian OEM, an unrealistic construction schedule, and undisclosed CAPEX for 132 kV transmission lines.">Проведён трёхуровневый структурный анализ: технические решения, финансовая модель, контрактная и регуляторная обеспеченность. Выявлен десятикратный разрыв между заявленным тарифом в тексте (25 ₦/кВт·ч) и фактически использованным в расчётах (~225 ₦/кВт·ч) — ошибка, полностью инвалидирующая финансовый прогноз. Зафиксированы: отсутствие подписанного GSA/GSPA с ExxonMobil при ключевом допущении о нулевой цене газа, санкционные и сервисные риски по российскому OEM, нереалистичный график строительства и нераскрытый CAPEX по ЛЭП 132 кВ.</span></p>
+
+          <div class="result-line">
+            <strong data-ru="Выходы:" data-en="Deliverables:">Выходы:</strong>
+            <span data-ru=" Аналитический отчёт с полным разбором технических решений, финансовой модели и рисков. Экспертное заключение с итоговой оценкой и рекомендацией. Карта красных флагов с ранжированием по критичности. Дорожная карта доработки проекта до банковского уровня (0–72 часа и 2 недели). Список профильных контактов для потенциального финансирования (IFC, AFC)." data-en=" Analytical report with full breakdown of technical solutions, financial model and risks. Expert opinion with final assessment and recommendation. Red flag map ranked by criticality. Project improvement roadmap to bankable standard (0–72 hours and 2 weeks). List of relevant financing contacts (IFC, AFC)."> Аналитический отчёт с полным разбором технических решений, финансовой модели и рисков. Экспертное заключение с итоговой оценкой и рекомендацией. Карта красных флагов с ранжированием по критичности. Дорожная карта доработки проекта до банковского уровня (0–72 часа и 2 недели). Список профильных контактов для потенциального финансирования (IFC, AFC).</span>
+          </div>
+
+          <p><strong data-ru="Результат и статус." data-en="Outcome and status.">Результат и статус.</strong> <span data-ru="На основании экспертного заключения клиент отказался от участия в проекте до фиксации каких-либо обязательств. Защищено $30 млн первого транша. Бизнес-план признан неготовым к инвестиционному решению: системные несогласованности в финансовой модели и отсутствие базового контрактного пакета (PPA, GSA, LTSA) исключали банковую состоятельность проекта. Проект сохраняет коммерческий потенциал при условии пересмотра допущений и структурирования полного контрактного пакета." data-en="Based on the expert opinion, the client declined to participate in the project before any commitments were made. $30M first tranche protected. The business plan was deemed unready for an investment decision: systemic inconsistencies in the financial model and the absence of a basic contract package (PPA, GSA, LTSA) excluded the project's bankability as presented. The project retains commercial potential subject to revised assumptions and a complete contract package.">На основании экспертного заключения клиент отказался от участия в проекте до фиксации каких-либо обязательств. Защищено $30 млн первого транша. Бизнес-план признан неготовым к инвестиционному решению: системные несогласованности в финансовой модели и отсутствие базового контрактного пакета (PPA, GSA, LTSA) исключали банковую состоятельность проекта. Проект сохраняет коммерческий потенциал при условии пересмотра допущений и структурирования полного контрактного пакета.</span></p>
+
+          <p><strong data-ru="Почему это важно." data-en="Why it matters.">Почему это важно.</strong> <span data-ru="Кейс показывает, что внешняя убедительность упаковки — реальная локация, логичная идея утилизации факельного газа, профессиональное оформление — не заменяет независимую проверку экономической основы. Десятикратный разрыв в тарифном допущении оставался незамеченным именно потому, что общая картина выглядела правдоподобно. Один цикл структурного анализа с отраслевым опытом в энергетике оказался достаточным, чтобы предотвратить вход в проект с фундаментально нерабочей экономикой на стадии, когда выход ещё не стоил ничего." data-en="The case shows that external plausibility — real location, logical flare gas utilisation concept, professional presentation — does not substitute for independent verification of the economic foundation. The tenfold tariff discrepancy went unnoticed precisely because the overall picture looked credible. A single cycle of structural analysis with sector experience in energy was sufficient to prevent entry into a project with fundamentally broken economics at a stage when exit still cost nothing.">Кейс показывает, что внешняя убедительность упаковки — реальная локация, логичная идея утилизации факельного газа, профессиональное оформление — не заменяет независимую проверку экономической основы. Десятикратный разрыв в тарифном допущении оставался незамеченным именно потому, что общая картина выглядела правдоподобно. Один цикл структурного анализа с отраслевым опытом в энергетике оказался достаточным, чтобы предотвратить вход в проект с фундаментально нерабочей экономикой на стадии, когда выход ещё не стоил ничего.</span></p>
+
+          <p style="margin-top:24px;"><a class="cta" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer" data-ru="Обсудить похожую задачу →" data-en="Discuss a similar task →">Обсудить похожую задачу →</a></p>
+        </div>
+      </div>
+    </div>
+
+
+
     <section class="section" id="products">
       <div class="wrap">
         <div class="section-kicker" data-ru="Готовые решения" data-en="Ready-Made Solutions">Готовые решения</div>
@@ -2005,7 +2040,6 @@
         <p class="final-cta-sub" data-ru="Давайте разберём её. Без презентаций и обязательств. Один разговор — и станет ясно, есть ли здесь точка рычага." data-en="Let's work through it. No presentations, no obligations. One conversation — and it will be clear whether there is a point of leverage here.">Давайте разберём её. Без презентаций и обязательств. Один разговор — и станет ясно, есть ли здесь точка рычага.</p>
         <div class="final-cta-actions">
           <a class="cta cta-solid" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer" data-ru="Написать в Telegram →" data-en="Write on Telegram →">Написать в Telegram →</a>
-          <a class="cta" href="https://t.me/fabrika_big3" target="_blank" rel="noopener noreferrer" data-ru="Канал FABRIKA BIG3 →" data-en="FABRIKA BIG3 Channel →">Канал FABRIKA BIG3 →</a>
           <span class="final-cta-note" data-ru="@Livesport2 · Отвечаю лично" data-en="@Livesport2 · I reply personally">@Livesport2 · Отвечаю лично</span>
         </div>
       </div>
@@ -2019,7 +2053,6 @@
       <div class="footer-links">
         <a href="#expertise" data-ru="Экспертиза" data-en="Expertise">Экспертиза</a>
         <a href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="https://t.me/fabrika_big3" target="_blank" rel="noopener noreferrer" data-ru="Канал" data-en="Channel">Канал</a>
       </div>
     </div>
   </footer>
