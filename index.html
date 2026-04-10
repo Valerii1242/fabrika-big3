@@ -1722,14 +1722,33 @@
             <button class="case-cta" data-ru="Читать кейс" data-en="Read case">Читать кейс</button>
           </div>
 
-          <!-- Case 03 — placeholder -->
-          <div class="case-card" style="opacity:.45;pointer-events:none;">
+          <!-- Case 03 — San Marino Fitness -->
+          <div class="case-card" onclick="openModal('modal-case-fitness')">
+            <span class="case-icon">
+              <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                <!-- Гантель -->
+                <rect x="1" y="12" width="4" height="4" rx="1" stroke-width="1.1"/>
+                <rect x="5" y="11" width="3" height="6" rx="1" stroke-width="1.1"/>
+                <line x1="8" y1="14" x2="20" y2="14" stroke-width="1.4"/>
+                <rect x="20" y="11" width="3" height="6" rx="1" stroke-width="1.1"/>
+                <rect x="23" y="12" width="4" height="4" rx="1" stroke-width="1.1"/>
+                <!-- Стрелка роста -->
+                <polyline points="6,24 11,19 15,22 22,15" stroke-width="1.2" fill="none"/>
+                <polyline points="19,15 22,15 22,18" stroke-width="1.2" fill="none"/>
+              </svg>
+            </span>
             <div class="case-card-top">
               <span class="case-num">03</span>
-              <span class="case-tag" data-ru="Скоро" data-en="Coming soon">Скоро</span>
+              <span class="case-tag" data-ru="AI-стратегия · Италия" data-en="AI Strategy · Italy">AI-стратегия · Италия</span>
             </div>
-            <h3 data-ru="Следующий кейс готовится" data-en="Next case in preparation">Следующий кейс готовится</h3>
-            <p data-ru="Реальная практика из стратегического консалтинга. В работе." data-en="Real practice from strategic consulting. In preparation.">Реальная практика из стратегического консалтинга. В работе.</p>
+            <h3 data-ru="Рост выручки на 40% за 2 месяца: AI-анализ для фитнес-сети" data-en="40% Revenue Growth in 2 Months: AI Analysis for a Fitness Network">Рост выручки на 40% за 2 месяца: AI-анализ для фитнес-сети</h3>
+            <p data-ru="Стратегический AI-анализ заменил консалтинговую команду. Сан-Марино, фитнес-клуб вышел с грани безубыточности на устойчивый рост." data-en="Strategic AI analysis replaced a consulting team. San Marino fitness club moved from breakeven to sustainable growth.">Стратегический AI-анализ заменил консалтинговую команду. Сан-Марино, фитнес-клуб вышел с грани безубыточности на устойчивый рост.</p>
+            <div class="case-meta">
+              <span class="case-badge" data-ru="AI-инструменты" data-en="AI Tools">AI-инструменты</span>
+              <span class="case-badge" data-ru="Малый бизнес" data-en="SMB">Малый бизнес</span>
+              <span class="case-badge" data-ru="+40% выручки" data-en="+40% Revenue">+40% выручки</span>
+            </div>
+            <button class="case-cta" data-ru="Читать кейс" data-en="Read case">Читать кейс</button>
           </div>
 
         </div>
@@ -1799,6 +1818,34 @@
     </div>
 
 
+
+    <!-- ═══════════════════════════════ MODAL: Case Fitness San Marino -->
+    <div class="modal-overlay" id="modal-case-fitness" onclick="if(event.target===this)closeModal('modal-case-fitness')">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('modal-case-fitness')">✕</button>
+        <div class="modal-kicker" data-ru="Кейс 03 · AI-стратегия · Сан-Марино" data-en="Case 03 · AI Strategy · San Marino">Кейс 03 · AI-стратегия · Сан-Марино</div>
+        <h2 class="modal-title" data-ru="Рост выручки на 40% за 2 месяца: AI-анализ для фитнес-сети" data-en="40% Revenue Growth in 2 Months: AI Analysis for a Fitness Network">Рост выручки на 40% за 2 месяца: AI-анализ для фитнес-сети</h2>
+        <div class="modal-body">
+
+          <p><strong data-ru="Контекст." data-en="Context.">Контекст.</strong> <span data-ru="Республика Сан-Марино, 2024 год. FSBB — фитнес-клуб с историей с 2010 года, позиционированный как премиальный зал с оборудованием Hammer Strength, Cybex, Life Fitness и круглосуточным доступом. После ребрендинга в 2021 году бизнес балансировал на грани безубыточности: выручка 18–20 тыс. евро в месяц при постоянных расходах около 15,8 тыс. евро. Отток клиентов превышал приток, конверсия пробных визитов падала, маркетинг в соцсетях велся без системы." data-en="Republic of San Marino, 2024. FSBB — a fitness club founded in 2010, positioned as a premium strength training facility with Hammer Strength, Cybex and Life Fitness equipment and 24/7 access. After a 2021 rebrand, the business was operating near breakeven: revenue of €18–20K per month against fixed costs of around €15.8K. Client churn exceeded acquisition, trial visit conversion was falling, and social media marketing had no system.">Республика Сан-Марино, 2024 год. FSBB — фитнес-клуб с историей с 2010 года, позиционированный как премиальный зал с оборудованием Hammer Strength, Cybex, Life Fitness и круглосуточным доступом. После ребрендинга в 2021 году бизнес балансировал на грани безубыточности: выручка 18–20 тыс. евро в месяц при постоянных расходах около 15,8 тыс. евро. Отток клиентов превышал приток, конверсия пробных визитов падала, маркетинг в соцсетях велся без системы.</span></p>
+
+          <p><strong data-ru="Задача." data-en="The task.">Задача.</strong> <span data-ru="Управляющая обратилась в рамках обучающей программы «AI — мой личный ассистент». На первой сессии сформулировала конкретную задачу: рост посещаемости и выручки, выстраивание работы с тренерами, перезапуск маркетинга в соцсетях. Сложность — малый бюджет на продвижение (около 600 евро в месяц), слабая управленческая формализация, конкурентное давление со стороны классических клубов Сан-Марино и low-cost сетей приграничного Римини." data-en="The club manager approached through the training programme 'AI — My Personal Assistant'. At the first session she formulated a specific business challenge: grow attendance and revenue, restructure trainer management, relaunch social media marketing. Key constraints: a small promotion budget (around €600/month), weak management formalisation, and competitive pressure from both traditional San Marino clubs and low-cost chains in neighbouring Rimini.">Управляющая обратилась в рамках обучающей программы «AI — мой личный ассистент». На первой сессии сформулировала конкретную задачу: рост посещаемости и выручки, выстраивание работы с тренерами, перезапуск маркетинга в соцсетях. Сложность — малый бюджет на продвижение (около 600 евро в месяц), слабая управленческая формализация, конкурентное давление со стороны классических клубов Сан-Марино и low-cost сетей приграничного Римини.</span></p>
+
+          <p><strong data-ru="Что было сделано." data-en="What was done.">Что было сделано.</strong> <span data-ru="Силами AI-инструментов под профессиональным руководством собран полный аналитический пакет. Проведён конкурентный анализ по геолокации в радиусе 20 км — 7 игроков, включая Phisicol, Dynamic, Move, FitUP, CrossFit 3 Towers. Построена финансовая модель с тремя сценариями, расчётом точки безубыточности и юнит-экономикой по каждому продукту. Выполнен полный SWOT, аудит Instagram и Facebook с рекомендациями по воронке Free Pass и контент-плану. Разработана дорожная карта на 90 дней с KPI и адаптацией под ограниченный бюджет. Отдельно — пересборка модели работы с тренерами: смена сплита PT с 80/20 на 70/30, введение floor fee, запуск small-group тренингов." data-en="A complete analytical package was assembled using AI tools under professional guidance. Competitive analysis by geolocation within 20 km — 7 players including Phisicol, Dynamic, Move, FitUP, CrossFit 3 Towers. A financial model was built with three scenarios, breakeven calculation and unit economics per product. Full SWOT analysis, Instagram and Facebook audit with Free Pass funnel and content plan recommendations. A 90-day roadmap with weekly breakdown and KPIs adapted to the limited budget. Separately: trainer model restructuring — PT split changed from 80/20 to 70/30, floor fee introduced, small-group training launched.">Силами AI-инструментов под профессиональным руководством собран полный аналитический пакет. Проведён конкурентный анализ по геолокации в радиусе 20 км — 7 игроков, включая Phisicol, Dynamic, Move, FitUP, CrossFit 3 Towers. Построена финансовая модель с тремя сценариями, расчётом точки безубыточности и юнит-экономикой по каждому продукту. Выполнен полный SWOT, аудит Instagram и Facebook с рекомендациями по воронке Free Pass и контент-плану. Разработана дорожная карта на 90 дней с KPI и адаптацией под ограниченный бюджет. Отдельно — пересборка модели работы с тренерами: смена сплита PT с 80/20 на 70/30, введение floor fee, запуск small-group тренингов.</span></p>
+
+          <div class="result-line">
+            <strong data-ru="Выходы:" data-en="Deliverables:">Выходы:</strong>
+            <span data-ru=" 7 структурированных документов: финансовый анализ с моделями сценариев, SWOT-матрица, конкурентный анализ, сравнительный анализ соцсетей, аудит Instagram, аудит Facebook, дорожная карта на 90 дней. Все материалы переданы в рабочем формате, пригодном к немедленному внедрению." data-en=" 7 structured documents: financial analysis with scenario models, SWOT matrix, competitive analysis, social media benchmarking, Instagram audit, Facebook audit, 90-day implementation roadmap. All materials delivered in a ready-to-use working format."> 7 структурированных документов: финансовый анализ с моделями сценариев, SWOT-матрица, конкурентный анализ, сравнительный анализ соцсетей, аудит Instagram, аудит Facebook, дорожная карта на 90 дней. Все материалы переданы в рабочем формате, пригодном к немедленному внедрению.</span>
+          </div>
+
+          <p><strong data-ru="Результат и статус." data-en="Outcome and status.">Результат и статус.</strong> <span data-ru="Через 2 месяца после получения аналитики и запуска рекомендаций выручка клуба выросла с 18–20 тыс. евро до 28 тыс. евро в месяц — прирост порядка 40%. Клиент самостоятельно реализует план, используя полученные инструменты и методику." data-en="Two months after receiving the analysis and launching the recommendations, club revenue grew from €18–20K to €28K per month — a gain of approximately 40%. The client is independently executing the plan using the delivered tools and methodology.">Через 2 месяца после получения аналитики и запуска рекомендаций выручка клуба выросла с 18–20 тыс. евро до 28 тыс. евро в месяц — прирост порядка 40%. Клиент самостоятельно реализует план, используя полученные инструменты и методику.</span></p>
+
+          <p><strong data-ru="Почему это важно." data-en="Why it matters.">Почему это важно.</strong> <span data-ru="Кейс демонстрирует практическую модель, при которой AI-инструменты под управлением опытного стратега заменяют полноценную консалтинговую команду по стоимости, но не по глубине. Малый бизнес в конкурентной европейской среде получил стратегический анализ уровня крупного проекта — за время одного учебного модуля. Для собственников и управляющих, работающих на ограниченных ресурсах, это прецедент: правильно выстроенный AI-анализ даёт измеримый финансовый результат быстрее и дешевле традиционного консалтинга." data-en="The case demonstrates a practical model in which AI tools under experienced strategic guidance replace a full consulting team in cost — but not in depth. A small business in a competitive European market received project-level strategic analysis within a single training module. For owners and managers operating under resource constraints, this is a precedent: properly structured AI analysis delivers measurable financial results faster and cheaper than traditional consulting.">Кейс демонстрирует практическую модель, при которой AI-инструменты под управлением опытного стратега заменяют полноценную консалтинговую команду по стоимости, но не по глубине. Малый бизнес в конкурентной европейской среде получил стратегический анализ уровня крупного проекта — за время одного учебного модуля. Для собственников и управляющих, работающих на ограниченных ресурсах, это прецедент: правильно выстроенный AI-анализ даёт измеримый финансовый результат быстрее и дешевле традиционного консалтинга.</span></p>
+
+          <p style="margin-top:24px;"><a class="cta" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer" data-ru="Обсудить похожую задачу →" data-en="Discuss a similar task →">Обсудить похожую задачу →</a></p>
+        </div>
+      </div>
+    </div>
 
     <section class="section" id="products">
       <div class="wrap">
