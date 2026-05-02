@@ -1048,7 +1048,7 @@
     /* ── ANALYTICS / ARTICLES block ── */
     .analytics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1px;
       background: var(--line);
       border: 1px solid var(--line);
@@ -2632,6 +2632,8 @@
   </footer>
 
 <script>
+window.history.scrollRestoration = "manual";
+window.scrollTo(0, 0);
 var LANG_DATA = {
   ru: {
     lead: 'Помогаю руководителям и собственникам <strong>встроить AI в реальные бизнес‑процессы</strong> — без потери управляемости, с понятной архитектурой и измеримым результатом.',
