@@ -2373,7 +2373,7 @@
           </div>
         </div>
 
-        <div class="article-full" id="article-weak-decisions">
+        <div class="article-full" id="article-weak-decisions" style="display:none;">
           <div class="wrap">
             <button class="article-back" onclick="toggleArticle('article-weak-decisions')" data-ru="← Все статьи" data-en="← All articles">← Все статьи</button>
             <div class="article-kicker" data-ru="Управленческие решения · 02.05.2026" data-en="Management Decisions · 02.05.2026">Управленческие решения · 02.05.2026</div>
@@ -2645,11 +2645,11 @@ var LANG_DATA = {
 function toggleArticle(id) {
   var el = document.getElementById(id);
   if (!el) return;
-  var isOpen = el.classList.contains('open');
-  document.querySelectorAll('.article-full').forEach(function(a) { a.classList.remove('open'); });
+  var isOpen = el.style.display === "block";
+  document.querySelectorAll(".article-full").forEach(function(a) { a.style.display = "none"; });
   if (!isOpen) {
-    el.classList.add('open');
-    setTimeout(function() { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+    el.style.display = "block";
+    setTimeout(function() { el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 100);
   }
 }
 function setLang(lang) {
