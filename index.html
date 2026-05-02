@@ -1412,7 +1412,7 @@
           <span style="color:rgba(201,171,103,0.35);">|</span>
           <button id="btn-en" onclick="setLang('en')" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:6px 10px;">EN</button>
         </div>
-        <a href="#analytics" style="font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;opacity:.8;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.8" data-ru="Аналитика" data-en="Analytics">Аналитика</a>
+        <a href="javascript:void(0)" onclick="document.querySelector('[data-section=analytics]').scrollIntoView({behavior:'smooth'}) style="font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;opacity:.8;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.8" data-ru="Аналитика" data-en="Analytics">Аналитика</a>
         <a href="#zg" style="font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;opacity:.8;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.8">ZG 2.0</a>
         <a class="cta" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer">Записаться на сессию</a>
       </div>
@@ -2355,7 +2355,7 @@
 
 
     <!-- ═══════════════════════════════════ ANALYTICS -->
-    <section class="section" id="analytics">
+    <section class="section" data-section="analytics">
       <div class="wrap">
         <div class="section-kicker" data-ru="Аналитика" data-en="Analytics">Аналитика</div>
         <h2 data-ru="Статьи и разборы" data-en="Articles &amp; Analysis">Статьи<br>и разборы</h2>
