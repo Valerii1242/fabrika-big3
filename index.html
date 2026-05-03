@@ -916,6 +916,15 @@
       padding: 4px 10px;
       font-weight: 600;
     }
+    .product-format-badge.badge-clickable {
+      cursor: pointer;
+      transition: color .18s, border-color .18s, background .18s;
+    }
+    .product-format-badge.badge-clickable:hover {
+      color: var(--gold);
+      border-color: rgba(201,171,103,.6);
+      background: rgba(201,171,103,.07);
+    }
     .product-cta {
       display: inline-flex;
       align-items: center;
@@ -1579,7 +1588,7 @@
             </span>
           </a>
 
-          <a class="audience-tile" href="#methodology">
+          <a class="audience-tile" href="#" onclick="event.preventDefault();openModal('modal-methodology')" role="button">
             <span class="audience-icon"><svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><polygon points="14,2 25,8 25,20 14,26 3,20 3,8"/><line x1="14" y1="2" x2="14" y2="26"/><line x1="3" y1="8" x2="25" y2="20"/><line x1="25" y1="8" x2="3" y2="20"/></svg></span>
             <div class="audience-tile-top">
               <span class="audience-num">02</span>
@@ -1607,7 +1616,7 @@
             </span>
           </a>
 
-          <a class="audience-tile" href="#methodology">
+          <a class="audience-tile" href="#" onclick="event.preventDefault();openModal('modal-methodology')" role="button">
             <span class="audience-icon"><svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="17" y="3" width="8" height="8" rx="1"/><rect x="3" y="17" width="8" height="8" rx="1"/><rect x="17" y="17" width="8" height="8" rx="1"/><line x1="11" y1="7" x2="17" y2="7"/><line x1="11" y1="21" x2="17" y2="21"/><line x1="7" y1="11" x2="7" y2="17"/><line x1="21" y1="11" x2="21" y2="17"/></svg></span>
             <div class="audience-tile-top">
               <span class="audience-num">04</span>
@@ -1933,9 +1942,9 @@
             <p class="product-descriptor" data-ru="Зона Гениальности" data-en="Genius Zone">Зона Гениальности</p>
             <p data-ru="Авторская методология, которая переводит опыт и сильные действия в структуру: формулу ценности, карту зон, сценарии реализации и план на 14 дней. Не тест и не тренинг — диагностический инструмент с измеримыми выходами." data-en="A proprietary methodology that transforms real-world experience and patterns of action into a structured formula: a value map, implementation scenarios, and a 14-day action plan. Not a test or training — a diagnostic instrument with measurable outputs.">Авторская методология, которая переводит опыт и сильные действия в структуру: формулу ценности, карту зон, сценарии реализации и план на 14 дней. Не тест и не тренинг — диагностический инструмент с измеримыми выходами.</p>
             <div class="product-formats">
-              <span class="product-format-badge">S45</span>
-              <span class="product-format-badge">S60</span>
-              <span class="product-format-badge">S90</span>
+              <span class="product-format-badge badge-clickable" onclick="event.stopPropagation();openModal('modal-zg20')" title="Форматы сессии">S45</span>
+              <span class="product-format-badge badge-clickable" onclick="event.stopPropagation();openModal('modal-zg20')" title="Форматы сессии">S60</span>
+              <span class="product-format-badge badge-clickable" onclick="event.stopPropagation();openModal('modal-zg20')" title="Форматы сессии">S90</span>
               <span class="product-format-badge" data-ru="По запросу" data-en="On request">По запросу</span>
             </div>
             <button class="product-cta" data-ru="Подробнее" data-en="Learn more">Подробнее</button>
@@ -2376,6 +2385,7 @@
       <div data-ru="© 2026 Валерий Корешков · FABRIKA BIG3" data-en="© 2026 Valerii Koreshkov · FABRIKA BIG3">© 2026 Валерий Корешков · FABRIKA BIG3</div>
       <div class="footer-links">
         <a href="#expertise" data-ru="Экспертиза" data-en="Expertise">Экспертиза</a>
+        <a href="https://t.me/fabrika_big3" target="_blank" rel="noopener noreferrer" data-ru="Канал" data-en="Channel">Канал</a>
         <a href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer">Telegram</a>
       </div>
     </div>
