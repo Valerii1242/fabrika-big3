@@ -5,46 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Валерий Корешков · FABRIKA BIG3</title>
   <meta name="description" content="Стратегический консультант · AI-архитектор. FABRIKA BIG3." />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fabrika-big3.com/" />
-  <meta property="og:title" content="Валерий Корешков · FABRIKA BIG3" />
-  <meta property="og:description" content="Стратегический консультант, архитектор решений. M&A, Energy, AI-агенты, управленческая трансформация." />
-  <meta property="og:image" content="https://fabrika-big3.com/og-image.jpg" />
-  <meta property="og:locale" content="ru_RU" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Валерий Корешков · FABRIKA BIG3" />
-  <meta name="twitter:description" content="Стратегический консультант, архитектор решений. M&A, Energy, AI-агенты, управленческая трансформация." />
-  <meta name="twitter:image" content="https://fabrika-big3.com/og-image.jpg" />
-
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4N1J0C260"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Z4N1J0C260');
-  </script>
-
-  <!-- Яндекс Метрика -->
-  <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(108989696, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-    });
-  </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/108989696" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
   <style>
     :root {
       --bg: #060606;
@@ -1045,173 +1005,6 @@
     }
 
 
-    /* ── ANALYTICS / ARTICLES block ── */
-    .analytics-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      margin-top: 40px;
-    }
-    .article-card {
-      background: var(--panel);
-      padding: 36px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      cursor: pointer;
-      transition: background .2s;
-      position: relative;
-    }
-    .article-card:hover { background: #0f0f0f; }
-    .article-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--gold);
-      opacity: 0;
-      transition: opacity .2s;
-    }
-    .article-card:hover::before { opacity: 1; }
-    .article-card-tag {
-      font-size: 10px;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: rgba(201,171,103,.5);
-      font-weight: 600;
-    }
-    .article-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-      margin: 0;
-      line-height: 1.3;
-      letter-spacing: -.02em;
-    }
-    .article-card:hover h3 { color: var(--gold); }
-    .article-card-lead {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.65;
-      margin: 0;
-    }
-    .article-card-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-    }
-    .article-card-date {
-      font-size: 11px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.25);
-    }
-    .article-card-read {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .article-full {
-      display: none;
-      padding: 80px 0 60px;
-      border-top: 1px solid var(--line);
-    }
-    .article-full.open { display: block; }
-    .article-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--gold-soft);
-      cursor: pointer;
-      margin-bottom: 48px;
-      transition: color .18s;
-      background: none;
-      border: none;
-      font-family: inherit;
-      padding: 0;
-    }
-    .article-back:hover { color: var(--gold); }
-    .article-kicker {
-      font-size: 10px;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--gold-soft);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .article-h1 {
-      font-size: clamp(28px, 3.5vw, 48px);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -.03em;
-      color: var(--text);
-      margin: 0 0 20px;
-    }
-    .article-byline {
-      font-size: 12px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.3);
-    }
-    .article-lead {
-      font-size: clamp(17px, 1.8vw, 20px);
-      line-height: 1.65;
-      color: var(--gold-soft);
-      font-weight: 400;
-      margin: 0 0 40px;
-      max-width: 720px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid var(--line);
-    }
-    .article-body {
-      max-width: 720px;
-      font-size: clamp(15px, 1.4vw, 17px);
-      line-height: 1.78;
-      color: rgba(244,241,234,.82);
-    }
-    .article-body p { margin: 0 0 24px; }
-    .article-body p:last-child { margin-bottom: 0; }
-    .article-cta-block {
-      margin-top: 48px;
-      max-width: 720px;
-      padding: 28px 32px;
-      border: 1px solid var(--line);
-      background: rgba(201,171,103,.04);
-    }
-    .article-cta-block p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0 0 16px;
-    }
-    .article-cta-block a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--gold);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: opacity .18s;
-    }
-    .article-cta-block a:hover { opacity: .72; }
-    @media (max-width: 600px) {
-      .article-card { padding: 28px 22px; }
-      .article-cta-block { padding: 22px 20px; }
-    }
-
     /* ── FINAL CTA block ── */
     .final-cta {
       margin: 84px 0 0;
@@ -1412,7 +1205,6 @@
           <span style="color:rgba(201,171,103,0.35);">|</span>
           <button id="btn-en" onclick="setLang('en')" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:6px 10px;">EN</button>
         </div>
-        <a href="javascript:void(0)" onclick="document.querySelector('[data-section=analytics]').scrollIntoView({behavior:'smooth'}) style="font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;opacity:.8;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.8" data-ru="Аналитика" data-en="Analytics">Аналитика</a>
         <a href="#zg" style="font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;opacity:.8;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.8">ZG 2.0</a>
         <a class="cta" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer">Записаться на сессию</a>
       </div>
@@ -2307,7 +2099,7 @@
                 <span class="tenchat-stat-label" data-ru="связей" data-en="connections">связей</span>
               </div>
               <div>
-                <span class="tenchat-stat-val">17+</span>
+                <span class="tenchat-stat-val">31+</span>
                 <span class="tenchat-stat-label" data-ru="публикаций" data-en="posts">публикаций</span>
               </div>
             </div>
@@ -2347,62 +2139,45 @@
               <p data-ru="15 универсальных приёмов работы с ИИ. Главный вывод — не в приёмах и не в технологиях." data-en="15 universal techniques for working with AI. The main conclusion is not about techniques or technology.">15 универсальных приёмов работы с ИИ. Главный вывод — не в приёмах и не в технологиях.</p>
             </a>
 
+            <button class="tenchat-post tenchat-post--article" onclick="document.getElementById('modal-weak-decisions').style.display='flex'" style="background:none;border:none;text-align:left;cursor:pointer;width:100%;">
+              <span class="tenchat-post-tag" data-ru="Управление · Аналитика" data-en="Management · Analytics">Управление · Аналитика</span>
+              <h4 data-ru="Как принимаются слабые решения в сложных проектах" data-en="How weak decisions are made in complex projects">Как принимаются слабые решения в сложных проектах</h4>
+              <p data-ru="Проблема чаще всего не в качестве аналитиков — а в архитектуре задачи на входе." data-en="The problem is usually not in the quality of analysts — but in the architecture of the task at the start.">Проблема чаще всего не в качестве аналитиков — а в архитектуре задачи на входе.</p>
+              <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+            </button>
+
           </div>
         </div>
       </div>
     </section>
 
-
-
-    <!-- ═══════════════════════════════════ ANALYTICS -->
-    <section class="section" data-section="analytics">
-      <div class="wrap">
-        <div class="section-kicker" data-ru="Аналитика" data-en="Analytics">Аналитика</div>
-        <h2 data-ru="Статьи и разборы" data-en="Articles &amp; Analysis">Статьи<br>и разборы</h2>
-        <p class="audience-intro" data-ru="Управленческие разборы из практики. Без хайпа — только рабочие механики." data-en="Management breakdowns from practice. No hype — just working mechanics.">Управленческие разборы из практики. Без хайпа — только рабочие механики.</p>
-
-        <div class="analytics-grid">
-          <div class="article-card" onclick="toggleArticle('article-weak-decisions')">
-            <span class="article-card-tag" data-ru="Управленческие решения · Аналитика" data-en="Management Decisions · Analysis">Управленческие решения · Аналитика</span>
-            <h3 data-ru="Как принимаются слабые решения в сложных проектах" data-en="How weak decisions are made in complex projects">Как принимаются слабые решения в сложных проектах</h3>
-            <p class="article-card-lead" data-ru="Большинство управленческих ошибок происходят не из-за нехватки информации — а из-за неверной рамки анализа на входе." data-en="Most management errors stem not from lack of information — but from a wrong analytical frame at the start.">Большинство управленческих ошибок происходят не из-за нехватки информации — а из-за неверной рамки анализа на входе.</p>
-            <div class="article-card-meta">
-              <span class="article-card-date">02.05.2026</span>
-              <span class="article-card-read" data-ru="Читать →" data-en="Read →">Читать →</span>
-            </div>
-          </div>
+    <!-- MODAL: Как принимаются слабые решения -->
+    <div id="modal-weak-decisions" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)this.style.display='none'">
+      <div style="background:#0f0f0f;border:1px solid rgba(201,168,76,.22);max-width:720px;width:100%;max-height:90vh;overflow-y:auto;padding:56px 52px;position:relative;">
+        <button onclick="document.getElementById('modal-weak-decisions').style.display='none'" style="position:absolute;top:20px;right:24px;background:none;border:none;color:rgba(255,255,255,.4);font-size:24px;cursor:pointer;line-height:1;">×</button>
+        <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.6);margin-bottom:24px;">Управление · Аналитика</div>
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,3vw,32px);font-weight:400;color:#F2EDE4;line-height:1.25;margin-bottom:36px;">Как принимаются слабые решения в сложных проектах</h2>
+        <div style="font-size:16px;line-height:1.8;color:#D4D0C8;">
+          <p>Слабые решения в сложных проектах чаще всего рождаются не в конце, а в самом начале. Не тогда, когда не хватило данных, подвела команда или изменился рынок. А тогда, когда изначально неверно поставлен вопрос.</p>
+          <p>Потом всё может выглядеть вполне профессионально. Команда собирает рынок, конкурентов, финансовую модель, юридический контур. Материалы аккуратные, выводы убедительные, пакет выглядит серьёзно. Но если исходный вопрос был не «правильное ли это решение?», а «как нам это решение обосновать?», то весь последующий анализ начинает работать не на выбор, а на подтверждение.</p>
+          <p>А это уже две разные задачи.</p>
+          <p>Одна даёт рамку для реального решения. Другая — документ, который хорошо выглядит на совете директоров.</p>
+          <p>Именно поэтому ошибка часто остаётся незаметной изнутри. Люди работают добросовестно, собирают фактуру, обсуждают риски, сверяют цифры. Но двигаются внутри неверно заданной конструкции. В результате проект получает не ясность, а красиво оформленное подтверждение того, что и так уже решили считать правильным.</p>
+          <p style="color:#C9A84C;font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;border-left:2px solid rgba(201,168,76,.4);padding-left:20px;margin:32px 0;">Есть три признака, что работа с самого начала пошла не туда.</p>
+          <p><strong style="color:#F2EDE4;">Первый.</strong> Никто не может внятно сказать, при каком результате решение будет пересмотрено. Если никакие данные не способны изменить позицию — это уже не анализ. Это оформление заранее выбранного курса.</p>
+          <p><strong style="color:#F2EDE4;">Второй.</strong> Главный вопрос звучит широко и безопасно, но не требует точного ответа. «Оценить перспективы рынка» — это ещё не вопрос. «Есть ли у нас реальное преимущество в этом сегменте при текущей стоимости привлечения?» — уже вопрос. Разница между ними кажется стилистической только на первый взгляд. На практике это разница между анализом и его имитацией.</p>
+          <p><strong style="color:#F2EDE4;">Третий.</strong> Заранее не определено, что будет считаться ошибкой. А без этого почти любой результат потом можно подать как подтверждение правильного курса. Не потому, что кто-то хочет манипулировать. А потому, что сама конструкция задачи позволяет это сделать.</p>
+          <p>Правильно поставленный вопрос не гарантирует безошибочного решения. Рынок меняется, данные бывают неполными, люди ошибаются. Но неверный вопрос на входе почти гарантированно ведёт к слабому результату — даже при сильной команде и большом объёме работы.</p>
+          <p>Поэтому проблема чаще всего не в качестве аналитиков. Проблема в архитектуре задачи на входе. И решается она не только усилением команды, но и тем, как именно формулируется вопрос до начала работы.</p>
+          <p style="color:#C9A84C;">Хороший вопрос в начале почти всегда обходится дешевле, чем переделка неверного решения в конце.</p>
         </div>
-
-        <div class="article-full" id="article-weak-decisions" style="display:none;">
-          <div class="wrap">
-            <button class="article-back" onclick="toggleArticle('article-weak-decisions')" data-ru="← Все статьи" data-en="← All articles">← Все статьи</button>
-            <div class="article-kicker" data-ru="Управленческие решения · 02.05.2026" data-en="Management Decisions · 02.05.2026">Управленческие решения · 02.05.2026</div>
-            <h1 class="article-h1" data-ru="Как принимаются слабые решения в сложных проектах" data-en="How weak decisions are made in complex projects">Как принимаются слабые решения в сложных проектах</h1>
-            <p class="article-byline" data-ru="Валерий Корешков · FABRIKA BIG3" data-en="Valerii Koreshkov · FABRIKA BIG3">Валерий Корешков · FABRIKA BIG3</p>
-            <p class="article-lead" data-ru="Большинство управленческих ошибок происходят не из-за нехватки информации — а из-за неверной рамки анализа на входе. Разбираю механизм и три признака того, что работа с самого начала пошла не туда." data-en="Most management errors stem not from a lack of information — but from a wrong analytical frame at the start. I break down the mechanism and three signs that the work went wrong from the very beginning.">Большинство управленческих ошибок происходят не из-за нехватки информации — а из-за неверной рамки анализа на входе. Разбираю механизм и три признака того, что работа с самого начала пошла не туда.</p>
-            <div class="article-body">
-              <p data-ru="Слабые решения в сложных проектах чаще всего рождаются не в конце, а в самом начале. Не тогда, когда не хватило данных, подвела команда или изменился рынок. А тогда, когда изначально неверно поставлен вопрос." data-en="Weak decisions in complex projects are most often born not at the end, but at the very beginning. Not when data was lacking, the team failed, or the market shifted. But when the question was wrong from the start.">Слабые решения в сложных проектах чаще всего рождаются не в конце, а в самом начале. Не тогда, когда не хватило данных, подвела команда или изменился рынок. А тогда, когда изначально неверно поставлен вопрос.</p>
-              <p data-ru="Потом всё может выглядеть вполне профессионально. Команда собирает рынок, конкурентов, финансовую модель, юридический контур. Материалы аккуратные, выводы убедительные, пакет выглядит серьёзно. Но если исходный вопрос был не «правильное ли это решение?», а «как нам это решение обосновать?», то весь последующий анализ начинает работать не на выбор, а на подтверждение." data-en="Then everything can look quite professional. The team collects market data, competitors, financial models, legal frameworks. The materials are neat, conclusions convincing, the package looks serious. But if the original question was not ldquo;is this the right decision?rdquo; but ldquo;how do we justify this decision?rdquo; — then all subsequent analysis starts working not toward choice, but toward confirmation.">Потом всё может выглядеть вполне профессионально. Команда собирает рынок, конкурентов, финансовую модель, юридический контур. Материалы аккуратные, выводы убедительные, пакет выглядит серьёзно. Но если исходный вопрос был не «правильное ли это решение?», а «как нам это решение обосновать?», то весь последующий анализ начинает работать не на выбор, а на подтверждение.</p>
-              <p data-ru="А это уже две разные задачи. Одна даёт рамку для реального решения. Другая — документ, который хорошо выглядит на совете директоров." data-en="These are already two different tasks. One gives a frame for a real decision. The other — a document that looks good at the board meeting.">А это уже две разные задачи. Одна даёт рамку для реального решения. Другая — документ, который хорошо выглядит на совете директоров.</p>
-              <p data-ru="Именно поэтому ошибка часто остаётся незаметной изнутри. Люди работают добросовестно, собирают фактуру, обсуждают риски, сверяют цифры. Но двигаются внутри неверно заданной конструкции. В результате проект получает не ясность, а красиво оформленное подтверждение того, что и так уже решили считать правильным." data-en="This is precisely why the error often goes unnoticed from the inside. People work conscientiously, gather facts, discuss risks, check figures. But they move within a wrongly framed structure. As a result, the project gets not clarity, but a beautifully formatted confirmation of what had already been decided to consider correct.">Именно поэтому ошибка часто остаётся незаметной изнутри. Люди работают добросовестно, собирают фактуру, обсуждают риски, сверяют цифры. Но двигаются внутри неверно заданной конструкции. В результате проект получает не ясность, а красиво оформленное подтверждение того, что и так уже решили считать правильным.</p>
-              <p data-ru="Есть три признака, что работа с самого начала пошла не туда." data-en="There are three signs that the work went wrong from the very beginning.">Есть три признака, что работа с самого начала пошла не туда.</p>
-              <p data-ru="Первый. Никто не может внятно сказать, при каком результате решение будет пересмотрено. Если никакие данные не способны изменить позицию — это уже не анализ. Это оформление заранее выбранного курса." data-en="First. No one can clearly state what result would lead to reconsidering the decision. If no data can change the position — this is no longer analysis. It is the formatting of a pre-chosen course.">Первый. Никто не может внятно сказать, при каком результате решение будет пересмотрено. Если никакие данные не способны изменить позицию — это уже не анализ. Это оформление заранее выбранного курса.</p>
-              <p data-ru="Второй. Главный вопрос звучит широко и безопасно, но не требует точного ответа. «Оценить перспективы рынка» — это ещё не вопрос. «Есть ли у нас реальное преимущество в этом сегменте при текущей стоимости привлечения?» — уже вопрос. Разница между ними кажется стилистической только на первый взгляд. На практике это разница между анализом и его имитацией." data-en="Second. The main question sounds broad and safe, but requires no precise answer. ldquo;Assess market prospectsrdquo; — that is not yet a question. ldquo;Do we have a real advantage in this segment at the current cost of acquisition?rdquo; — that is a question. The difference seems stylistic only at first glance. In practice it is the difference between analysis and its imitation.">Второй. Главный вопрос звучит широко и безопасно, но не требует точного ответа. «Оценить перспективы рынка» — это ещё не вопрос. «Есть ли у нас реальное преимущество в этом сегменте при текущей стоимости привлечения?» — уже вопрос. Разница между ними кажется стилистической только на первый взгляд. На практике это разница между анализом и его имитацией.</p>
-              <p data-ru="Третий. Заранее не определено, что будет считаться ошибкой. А без этого почти любой результат потом можно подать как подтверждение правильного курса. Не потому, что кто-то хочет манипулировать. А потому, что сама конструкция задачи позволяет это сделать." data-en="Third. It has not been defined in advance what will count as an error. Without this, almost any result can later be presented as confirmation of the correct course. Not because someone wants to manipulate. But because the very construction of the task allows it.">Третий. Заранее не определено, что будет считаться ошибкой. А без этого почти любой результат потом можно подать как подтверждение правильного курса. Не потому, что кто-то хочет манипулировать. А потому, что сама конструкция задачи позволяет это сделать.</p>
-              <p data-ru="Правильно поставленный вопрос не гарантирует безошибочного решения. Рынок меняется, данные бывают неполными, люди ошибаются. Но неверный вопрос на входе почти гарантированно ведёт к слабому результату — даже при сильной команде и большом объёме работы." data-en="A correctly framed question does not guarantee an error-free decision. Markets change, data is sometimes incomplete, people make mistakes. But a wrong question at the start almost certainly leads to a weak outcome — even with a strong team and a large volume of work.">Правильно поставленный вопрос не гарантирует безошибочного решения. Рынок меняется, данные бывают неполными, люди ошибаются. Но неверный вопрос на входе почти гарантированно ведёт к слабому результату — даже при сильной команде и большом объёме работы.</p>
-              <p data-ru="Поэтому проблема чаще всего не в качестве аналитиков. Проблема в архитектуре задачи на входе. И решается она не только усилением команды, но и тем, как именно формулируется вопрос до начала работы." data-en="Therefore the problem is most often not in the quality of analysts. The problem is in the architecture of the task at the start. And it is solved not only by strengthening the team, but by how precisely the question is formulated before work begins.">Поэтому проблема чаще всего не в качестве аналитиков. Проблема в архитектуре задачи на входе. И решается она не только усилением команды, но и тем, как именно формулируется вопрос до начала работы.</p>
-              <p data-ru="Хороший вопрос в начале почти всегда обходится дешевле, чем переделка неверного решения в конце." data-en="A good question at the start almost always costs less than reworking a wrong decision at the end.">Хороший вопрос в начале почти всегда обходится дешевле, чем переделка неверного решения в конце.</p>
-            </div>
-            <div class="article-cta-block">
-              <p data-ru="Разбираю похожие управленческие ситуации в Telegram-канале FABRIKA BIG3 — подписывайтесь, чтобы не пропустить новые материалы." data-en="I break down similar management situations in the FABRIKA BIG3 Telegram channel — subscribe to stay updated.">Разбираю похожие управленческие ситуации в Telegram-канале FABRIKA BIG3 — подписывайтесь, чтобы не пропустить новые материалы.</p>
-              <a href="https://t.me/fabrika_big3" target="_blank" rel="noopener noreferrer" data-ru="Перейти в канал →" data-en="Go to channel →">Перейти в канал →</a>
-            </div>
-          </div>
+        <div style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(201,168,76,.15);">
+          <a href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--gold,#C9A84C);color:#000;font-size:13px;font-weight:600;letter-spacing:.08em;padding:14px 28px;text-decoration:none;">Обсудить задачу →</a>
         </div>
-
       </div>
-    </section>
-    <!-- ═══════════════════════════════════ /ANALYTICS -->
+    </div>
+
+
     <!-- ═══════════════════════════════════ FINAL CTA -->
     <section class="final-cta" id="contact">
       <div class="wrap">
@@ -2632,8 +2407,6 @@
   </footer>
 
 <script>
-window.history.scrollRestoration = "manual";
-window.scrollTo(0, 0);
 var LANG_DATA = {
   ru: {
     lead: 'Помогаю руководителям и собственникам <strong>встроить AI в реальные бизнес‑процессы</strong> — без потери управляемости, с понятной архитектурой и измеримым результатом.',
@@ -2644,16 +2417,6 @@ var LANG_DATA = {
     audienceFilter: '<strong>I do not work</strong> with those seeking quick hype, a magic button, or a universal AI tool without understanding the task. My format is for those who need a <strong>solution architecture</strong>, manageability, and real outcomes — not an imitation of transformation.'
   }
 };
-function toggleArticle(id) {
-  var el = document.getElementById(id);
-  if (!el) return;
-  var isOpen = el.style.display === "block";
-  document.querySelectorAll(".article-full").forEach(function(a) { a.style.display = "none"; });
-  if (!isOpen) {
-    el.style.display = "block";
-    setTimeout(function() { el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 100);
-  }
-}
 function setLang(lang) {
   var btnRu = document.getElementById('btn-ru');
   var btnEn = document.getElementById('btn-en');
