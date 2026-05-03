@@ -978,6 +978,16 @@
       color: var(--muted);
       line-height: 1.55;
     }
+    .product-modal-format-row.pmf-active {
+      background: rgba(201,171,103,.08);
+      border-left: 3px solid var(--gold);
+    }
+    .product-modal-format-row.pmf-active .pmf-label {
+      color: var(--text);
+    }
+    .product-modal-format-row.pmf-active .pmf-desc {
+      color: var(--text);
+    }
     .product-modal-quote {
       margin: 24px 0 0;
       padding: 20px 24px;
@@ -1925,9 +1935,9 @@
             <p class="product-descriptor" data-ru="Зона Гениальности" data-en="Genius Zone">Зона Гениальности</p>
             <p data-ru="Авторская методология, которая переводит опыт и сильные действия в структуру: формулу ценности, карту зон, сценарии реализации и план на 14 дней. Не тест и не тренинг — диагностический инструмент с измеримыми выходами." data-en="A proprietary methodology that transforms real-world experience and patterns of action into a structured formula: a value map, implementation scenarios, and a 14-day action plan. Not a test or training — a diagnostic instrument with measurable outputs.">Авторская методология, которая переводит опыт и сильные действия в структуру: формулу ценности, карту зон, сценарии реализации и план на 14 дней. Не тест и не тренинг — диагностический инструмент с измеримыми выходами.</p>
             <div class="product-formats">
-              <span class="product-format-badge">S45</span>
-              <span class="product-format-badge">S60</span>
-              <span class="product-format-badge">S90</span>
+              <span class="product-format-badge" onclick="event.stopPropagation();openModalFormat('S45')" style="cursor:pointer">S45</span>
+              <span class="product-format-badge" onclick="event.stopPropagation();openModalFormat('S60')" style="cursor:pointer">S60</span>
+              <span class="product-format-badge" onclick="event.stopPropagation();openModalFormat('S90')" style="cursor:pointer">S90</span>
               <span class="product-format-badge" data-ru="По запросу" data-en="On request">По запросу</span>
             </div>
             <button class="product-cta" data-ru="Подробнее" data-en="Learn more">Подробнее</button>
@@ -2004,15 +2014,15 @@
           </ul>
           <p><strong data-ru="Форматы:" data-en="Formats:">Форматы:</strong></p>
           <div class="product-modal-formats">
-            <div class="product-modal-format-row">
+            <div class="product-modal-format-row" id="pmf-row-S45">
               <div class="pmf-label">S45</div>
               <div class="pmf-desc" data-ru="Экспресс · Первичная гипотеза ядра + 14-дневный эксперимент" data-en="Express · Initial core hypothesis + 14-day experiment">Экспресс · Первичная гипотеза ядра + 14-дневный эксперимент</div>
             </div>
-            <div class="product-modal-format-row">
+            <div class="product-modal-format-row" id="pmf-row-S60">
               <div class="pmf-label">S60</div>
               <div class="pmf-desc" data-ru="Стандарт · Полный цикл: сбор опор → диагностика → Документ-Навигатор + план 14 дней" data-en="Standard · Full cycle: anchors → diagnostics → Navigator Document + 14-day plan">Стандарт · Полный цикл: сбор опор → диагностика → Документ-Навигатор + план 14 дней</div>
             </div>
-            <div class="product-modal-format-row">
+            <div class="product-modal-format-row" id="pmf-row-S90">
               <div class="pmf-label">S90</div>
               <div class="pmf-desc" data-ru="Углублённый · Добавляется слой R4: работа с ролью, лейтмотив, детальная формулировка «для кого»" data-en="In-depth · Adds R4 layer: role work, leitmotif, detailed 'for whom' articulation">Углублённый · Добавляется слой R4: работа с ролью, лейтмотив, детальная формулировка «для кого»</div>
             </div>
@@ -2424,6 +2434,21 @@ function openModal(id) {
   if (m) {
     m.classList.add('open');
     document.body.style.overflow = 'hidden';
+  }
+}
+function openModalFormat(format) {
+  openModal('modal-zg20');
+  // clear previous highlights
+  document.querySelectorAll('.product-modal-format-row').forEach(function(r) {
+    r.classList.remove('pmf-active');
+  });
+  // highlight target row
+  var row = document.getElementById('pmf-row-' + format);
+  if (row) {
+    row.classList.add('pmf-active');
+    setTimeout(function() {
+      row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 80);
   }
 }
 function closeModal(id) {
