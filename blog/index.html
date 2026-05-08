@@ -1,0 +1,35 @@
+---
+layout: default
+title: "Материалы"
+description: "Аналитика, кейсы и разборы от Валерия Корешкова · FABRIKA BIG3"
+---
+
+<main class="article-wrap">
+
+  <div class="article-meta">
+    <span>FABRIKA BIG3</span>Публикации
+  </div>
+
+  <h1>Материалы</h1>
+  <p style="color:var(--muted);margin-bottom:48px;">Аналитика, разборы сделок и прикладные кейсы из практики стратегического консультирования.</p>
+
+  <div style="display:flex;flex-direction:column;gap:2px;">
+    {% for post in site.posts %}
+    <a href="{{ post.url }}" style="display:block;padding:28px 32px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;transition:border-color .18s;" onmouseover="this.style.borderColor='var(--gold-soft)'" onmouseout="this.style.borderColor='var(--line)'">
+      <div style="font-size:12px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;">
+        {{ post.date | date: "%d.%m.%Y" }}
+        {% if post.categories %}· {{ post.categories | join: " · " }}{% endif %}
+      </div>
+      <div style="font-size:20px;font-weight:700;color:var(--text);line-height:1.25;margin-bottom:10px;">{{ post.title }}</div>
+      {% if post.description %}
+      <div style="font-size:15px;color:var(--muted);line-height:1.55;">{{ post.description }}</div>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+
+  <div style="margin-top:64px;padding-top:32px;border-top:1px solid var(--line);">
+    <a href="/" style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">← На главную</a>
+  </div>
+
+</main>
