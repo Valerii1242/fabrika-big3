@@ -1,0 +1,20 @@
+title: "Валерий Корешков · FABRIKA BIG3"
+description: "Стратегический консультант · AI-архитектор. FABRIKA BIG3."
+url: "https://fabrika-big3.com"
+baseurl: ""
+
+lang: ru
+author: "Валерий Корешков"
+
+permalink: /blog/:slug/
+
+plugins:
+  - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+  - "*.sh"
