@@ -1091,6 +1091,7 @@
       margin-top: 40px;
       background: var(--line);
       border: 1px solid var(--line);
+      align-items: start;
     }
     .tenchat-profile {
       background: var(--panel);
@@ -1099,6 +1100,8 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 24px;
+      position: sticky;
+      top: 80px;
     }
     .tenchat-profile-top { display: flex; flex-direction: column; gap: 14px; }
     .tenchat-platform {
@@ -1192,6 +1195,31 @@
       color: rgba(201,171,103,.5);
       font-weight: 600;
     }
+    .tenchat-post-tag.tag-ai { color: rgba(100,180,255,.7); }
+    .tenchat-post-tag.tag-ma { color: rgba(255,160,80,.7); }
+    .tenchat-post-tag.tag-zg { color: rgba(160,210,120,.7); }
+    .tenchat-post-num {
+      position: absolute;
+      top: 50%; right: 20px;
+      transform: translateY(-50%);
+      font-size: 28px; font-weight: 800;
+      color: rgba(201,171,103,.07);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      line-height: 1; pointer-events: none; user-select: none;
+    }
+    .tenchat-topics {
+      display: flex; flex-direction: column; gap: 8px;
+      padding-top: 20px; border-top: 1px solid var(--line);
+    }
+    .tenchat-topic-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .tenchat-topic-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .dot-ai { background: rgba(100,180,255,.65); }
+    .dot-ma { background: rgba(255,160,80,.65); }
+    .dot-zg { background: rgba(160,210,120,.65); }
     .tenchat-post h4 {
       font-size: 15px;
       font-weight: 700;
@@ -2124,6 +2152,20 @@
               <h3 class="tenchat-name" data-ru="Валерий Корешков" data-en="Valerii Koreshkov">Валерий Корешков</h3>
               <p class="tenchat-bio" data-ru="Эксперт в области AI, стратегии и архитектуры решений. Публикую практику — без хайпа, без воды." data-en="Expert in AI, strategy and solution architecture. Publishing practice — no hype, no filler.">Эксперт в области AI, стратегии и архитектуры решений. Публикую практику — без хайпа, без воды.</p>
             </div>
+            <div class="tenchat-topics">
+              <div class="tenchat-topic-item">
+                <span class="tenchat-topic-dot dot-ai"></span>
+                <span data-ru="AI · ZG 2.0 · Практика" data-en="AI · ZG 2.0 · Practice">AI · ZG 2.0 · Практика</span>
+              </div>
+              <div class="tenchat-topic-item">
+                <span class="tenchat-topic-dot dot-ma"></span>
+                <span data-ru="M&amp;A · Энергетика" data-en="M&amp;A · Energy">M&amp;A · Энергетика</span>
+              </div>
+              <div class="tenchat-topic-item">
+                <span class="tenchat-topic-dot dot-zg"></span>
+                <span data-ru="Инфраструктура · Стратегия" data-en="Infrastructure · Strategy">Инфраструктура · Стратегия</span>
+              </div>
+            </div>
             <a class="tenchat-link" href="https://t.me/fabrika_big3" target="_blank" rel="noopener noreferrer" data-ru="Читать в Telegram" data-en="Read on Telegram">Читать в Telegram</a>
           </div>
 
@@ -2131,73 +2173,83 @@
           <div class="tenchat-posts">
 
             <a class="tenchat-post" href="/blog/sdelochnaya-arkhitektura-chto-stoit-za-ciframi/" target="_blank" rel="noopener noreferrer" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="Сделочная архитектура · Блог" data-en="Deal Architecture · Blog">Сделочная архитектура · Блог</span>
+              <span class="tenchat-post-tag tag-ma" data-ru="Сделочная архитектура · Блог" data-en="Deal Architecture · Blog">Сделочная архитектура · Блог</span>
               <h4 data-ru="Сделочная архитектура: что стоит за цифрами" data-en="Deal Architecture: What Lies Behind the Numbers">Сделочная архитектура: что стоит за цифрами</h4>
               <p data-ru="Niger-Benin pipeline, LNG barter и логика инфраструктурных сделок — разбор кейса." data-en="Niger-Benin pipeline, LNG barter and the logic of infrastructure deals — a case breakdown.">Niger-Benin pipeline, LNG barter и логика инфраструктурных сделок — разбор кейса.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">01</span>
             </a>
 
             <a class="tenchat-post" href="/blog/pochemu-agi-ne-nuzhen/" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="AGI · Позиция" data-en="AGI · Position">AGI · Позиция</span>
+              <span class="tenchat-post-tag tag-ai" data-ru="AGI · Позиция" data-en="AGI · Position">AGI · Позиция</span>
               <h4 data-ru="Почему AGI не нужен. И почему я в этом почти не сомневаюсь" data-en="Why AGI is not needed. And why I'm almost certain of it">Почему AGI не нужен. И почему я в этом почти не сомневаюсь</h4>
               <p data-ru="Главный эффект возникает не в самой машине, а между человеком и системой." data-en="The main effect emerges not in the machine itself, but between the human and the system.">Главный эффект возникает не в самой машине, а между человеком и системой.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">02</span>
             </a>
 
             <a class="tenchat-post" href="/blog/zg-tri-rezhima/" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="ZG 2.0 · Методология" data-en="ZG 2.0 · Methodology">ZG 2.0 · Методология</span>
+              <span class="tenchat-post-tag tag-zg" data-ru="ZG 2.0 · Методология" data-en="ZG 2.0 · Methodology">ZG 2.0 · Методология</span>
               <h4 data-ru="Почему у «Зоны Гениальности» три режима: ручной, гибридный и закрытый" data-en="Why the Genius Zone has three modes: manual, hybrid and closed">Почему у «Зоны Гениальности» три режима: ручной, гибридный и закрытый</h4>
               <p data-ru="Главный вопрос здесь не в самой методике." data-en="The main question here is not about the method itself.">Главный вопрос здесь не в самой методике.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">03</span>
             </a>
 
             <a class="tenchat-post" href="/blog/ai-granitsy-pomogayushchikh/" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="AI · Границы" data-en="AI · Boundaries">AI · Границы</span>
+              <span class="tenchat-post-tag tag-ai" data-ru="AI · Границы" data-en="AI · Boundaries">AI · Границы</span>
               <h4 data-ru="Почему для помогающих практиков AI — это вопрос границ" data-en="Why for helping practitioners AI is a question of boundaries">Почему для помогающих практиков AI — это вопрос границ</h4>
               <p data-ru="Главный вопрос здесь не в моде и не в скорости." data-en="The main question here is not about trends or speed.">Главный вопрос здесь не в моде и не в скорости.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">04</span>
             </a>
 
             <a class="tenchat-post" href="/blog/slaboe-mesto-pomogayushchikh/" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="Позиция · Практика" data-en="Position · Practice">Позиция · Практика</span>
+              <span class="tenchat-post-tag tag-ai" data-ru="Позиция · Практика" data-en="Position · Practice">Позиция · Практика</span>
               <h4 data-ru="Как я увидел слабое место в сильной работе помогающих практиков" data-en="How I spotted the weak point in strong helping practitioners' work">Как я увидел слабое место в сильной работе помогающих практиков</h4>
               <p data-ru="Я не психолог и не коуч. Мой контур другой — стратегия, архитектура решений." data-en="I am not a psychologist or coach. My domain is different — strategy, solution architecture.">Я не психолог и не коуч. Мой контур другой — стратегия, архитектура решений.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">05</span>
             </a>
 
             <a class="tenchat-post" href="/blog/ii-novaya-norma-raboty/" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="AI-система · Финал серии" data-en="AI System · Series finale">AI-система · Финал серии</span>
+              <span class="tenchat-post-tag tag-ai" data-ru="AI-система · Финал серии" data-en="AI System · Series finale">AI-система · Финал серии</span>
               <h4 data-ru="ИИ — это не будущее. Это уже новая норма работы" data-en="AI is not the future. It is already the new normal of work">ИИ — это не будущее. Это уже новая норма работы</h4>
               <p data-ru="15 универсальных приёмов работы с ИИ. Главный вывод — не в приёмах и не в технологиях." data-en="15 universal techniques for working with AI. The main conclusion is not about techniques or technology.">15 универсальных приёмов работы с ИИ. Главный вывод — не в приёмах и не в технологиях.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">06</span>
             </a>
 
             <a class="tenchat-post tenchat-post--article" href="/blog/slabye-resheniya-v-proektakh/" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="Управление · Аналитика" data-en="Management · Analytics">Управление · Аналитика</span>
+              <span class="tenchat-post-tag tag-ma" data-ru="Управление · Аналитика" data-en="Management · Analytics">Управление · Аналитика</span>
               <h4 data-ru="Как принимаются слабые решения в сложных проектах" data-en="How weak decisions are made in complex projects">Как принимаются слабые решения в сложных проектах</h4>
               <p data-ru="Проблема чаще всего не в качестве аналитиков — а в архитектуре задачи на входе." data-en="The problem is usually not in the quality of analysts — but in the architecture of the task at the start.">Проблема чаще всего не в качестве аналитиков — а в архитектуре задачи на входе.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">07</span>
             </a>
 
             <a class="tenchat-post tenchat-post--article" href="/blog/moshennichestvo-en590/" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="M&amp;A · Энергетика" data-en="M&amp;A · Energy">M&amp;A · Энергетика</span>
+              <span class="tenchat-post-tag tag-ma" data-ru="M&amp;A · Энергетика" data-en="M&amp;A · Energy">M&amp;A · Энергетика</span>
               <h4 data-ru="Мошенническая схема EN590: как выглядит commodity-fraud на реальном примере" data-en="EN590 Fraud Scheme: What Commodity Fraud Looks Like in a Real Case">Мошенническая схема EN590: как выглядит commodity-fraud на реальном примере</h4>
               <p data-ru="Красивый пакет документов — ещё не сделка. Разбор реальной схемы на рынке нефтепродуктов и четыре шага, которые её разрушают." data-en="A professional-looking document pack is not yet a deal. A breakdown of a real fraud scheme in the petroleum market and four steps that expose it.">Красивый пакет документов — ещё не сделка. Разбор реальной схемы на рынке нефтепродуктов и четыре шага, которые её разрушают.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">08</span>
             </a>
 
             <a class="tenchat-post tenchat-post--article" href="/blog/bankable-project/" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="M&amp;A · Инфраструктура" data-en="M&amp;A · Infrastructure">M&amp;A · Инфраструктура</span>
+              <span class="tenchat-post-tag tag-ma" data-ru="M&amp;A · Инфраструктура" data-en="M&amp;A · Infrastructure">M&amp;A · Инфраструктура</span>
               <h4 data-ru="Что значит bankable-проект в инфраструктуре" data-en="What a Bankable Project Really Means in Infrastructure">Что значит bankable-проект в инфраструктуре</h4>
               <p data-ru="Не красивый IRR, а проект, который выдерживает проверку деньгами. Кейс: переработка промышленных отходов, CAPEX 135 млн руб., IRR 543% — и три красных флага." data-en="Not a pretty IRR, but a project that holds up under financial scrutiny. Case: industrial waste processing, CAPEX 135M RUB, IRR 543% — and three red flags.">Не красивый IRR, а проект, который выдерживает проверку деньгами. Кейс: переработка промышленных отходов, CAPEX 135 млн руб., IRR 543% — и три красных флага.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">09</span>
             </a>
 
             <a class="tenchat-post tenchat-post--article" href="/blog/infrastruktura-nakazyvaet-za-halturu/" style="border-left:2px solid rgba(201,171,103,.45);">
-              <span class="tenchat-post-tag" data-ru="Энергетика · Инфраструктура" data-en="Energy · Infrastructure">Энергетика · Инфраструктура</span>
+              <span class="tenchat-post-tag tag-ma" data-ru="Энергетика · Инфраструктура" data-en="Energy · Infrastructure">Энергетика · Инфраструктура</span>
               <h4 data-ru="Инфраструктура наказывает за халтуру" data-en="Infrastructure Punishes Sloppy Work">Инфраструктура наказывает за халтуру</h4>
               <p data-ru="На бумаге — CAPEX 135 млн, выручка 1 млрд, окупаемость два месяца. Но инфраструктурный проект живёт не в презентации. Он живёт на площадке." data-en="On paper — CAPEX 135M, revenue 1B, payback two months. But an infrastructure project doesn't live in the presentation. It lives on site.">На бумаге — CAPEX 135 млн, выручка 1 млрд, окупаемость два месяца. Но инфраструктурный проект живёт не в презентации. Он живёт на площадке.</p>
               <span style="font-size:11px;letter-spacing:.1em;color:var(--gold);margin-top:8px;display:block;" data-ru="Читать статью →" data-en="Read article →">Читать статью →</span>
+              <span class="tenchat-post-num">10</span>
             </a>
 
           </div>
