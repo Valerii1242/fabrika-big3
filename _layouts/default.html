@@ -47,20 +47,20 @@
       font-size: 15px; letter-spacing: .38em;
       color: var(--gold); font-weight: 700; text-decoration: none;
     }
-    .nav-right { display: flex; align-items: center; gap: 24px; }
-    .nav-links { display: flex; align-items: center; gap: 20px; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-links { display: flex; align-items: center; gap: 14px; }
     .nav-links a {
-      font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
       color: var(--muted); font-weight: 600; text-decoration: none;
-      transition: color .18s;
+      transition: color .18s; white-space: nowrap;
     }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
     .cta {
       display: inline-block;
       background: transparent; color: var(--text);
-      font-weight: 700; font-size: 12px;
-      letter-spacing: .14em; text-transform: uppercase;
-      padding: 10px 20px; border-radius: 6px;
+      font-weight: 700; font-size: 11px;
+      letter-spacing: .10em; text-transform: uppercase;
+      padding: 9px 16px; border-radius: 6px;
       border: 1px solid var(--gold);
       text-decoration: none; transition: all .18s;
       white-space: nowrap;
@@ -167,9 +167,9 @@
       <a href="/" class="brand">FABRIKA BIG3</a>
       <div class="nav-right">
         <div style="display:flex;align-items:center;gap:0;">
-          <a href="?lang=ru" style="background:none;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:6px 10px;text-decoration:none;">RU</a>
+          <button id="btn-ru" onclick="setLang('ru')" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:6px 10px;">RU</button>
           <span style="color:rgba(201,171,103,0.35);">|</span>
-          <a href="?lang=en" style="background:none;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:6px 10px;text-decoration:none;">EN</a>
+          <button id="btn-en" onclick="setLang('en')" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:6px 10px;">EN</button>
         </div>
         <nav class="nav-links">
           <a href="/#expertise">Экспертиза</a>
@@ -181,6 +181,25 @@
       </div>
     </div>
   </header>
+
+  <script>
+  function setLang(lang) {
+    var btnRu = document.getElementById('btn-ru');
+    var btnEn = document.getElementById('btn-en');
+    if (btnRu) btnRu.style.color = lang==='ru' ? 'var(--gold)' : 'var(--muted)';
+    if (btnEn) btnEn.style.color = lang==='en' ? 'var(--gold)' : 'var(--muted)';
+    document.querySelectorAll('[data-ru]').forEach(function(el) {
+      var val = el.getAttribute('data-' + lang);
+      if (val) el.textContent = val;
+    });
+    document.documentElement.lang = lang;
+    localStorage.setItem('lang', lang);
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var saved = localStorage.getItem('lang');
+    if (saved && saved !== 'ru') setLang(saved);
+  });
+  </script>
 
   {{ content }}
 
