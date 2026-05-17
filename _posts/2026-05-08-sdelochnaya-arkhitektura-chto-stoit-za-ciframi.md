@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Сделочная архитектура: что стоит за цифрами"
-slug: sdelochnaya-arkhitektura-chto-stoit-za-ciframi
 date: 2026-05-08
 categories: [M&A, Energy]
 description: "Разбор реального кейса: бартерная схема нефть–LNG через инфраструктуру Нигер–Бенин. Почему цифра — это ещё не сделка, и что значит управляемая конструкция."
