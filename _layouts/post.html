@@ -2,18 +2,124 @@
 layout: default
 ---
 
+{%- assign current_ref = page.ref -%}
+{%- assign current_lang = page.lang | default: 'ru' -%}
+{%- assign paired_post = nil -%}
+
+{%- for post in site.posts -%}
+  {%- if post.ref == current_ref and post.lang != current_lang -%}
+    {%- assign paired_post = post -%}
+  {%- endif -%}
+{%- endfor -%}
+
 <main class="article-wrap">
 
   <div class="article-meta">
-    <span>{{ page.categories | join: " · " }}</span>
-    {{ page.date | date: "%d.%m.%Y" }}
+    <div class="article-meta-top">
+      <a class="back" href="/blog/">
+        {%- if current_lang == 'en' -%}← All articles{%- else -%}← Все материалы{%- endif -%}
+      </a>
+      {%- if paired_post -%}
+      <div class="lang-switcher-post">
+        {%- if current_lang == 'ru' -%}
+          <span class="lang-active">RU</span>
+          <span class="lang-dot">·</span>
+          <a href="{{ paired_post.url }}" class="lang-inactive">EN</a>
+        {%- else -%}
+          <a href="{{ paired_post.url }}" class="lang-inactive">RU</a>
+          <span class="lang-dot">·</span>
+          <span class="lang-active">EN</span>
+        {%- endif -%}
+      </div>
+      {%- endif -%}
+    </div>
+
+    {%- if page.image -%}
+    <div class="article-hero">
+      <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy" />
+    </div>
+    {%- endif -%}
+
+    <h1 class="article-title">{{ page.title }}</h1>
+
+    <div class="article-meta-row">
+      <span>{{ page.categories | join: " · " }}</span>
+      {{ page.date | date: "%d.%m.%Y" }}
+    </div>
   </div>
 
   {{ content }}
 
   <div class="article-footer">
-    <a class="back" href="/blog/">← Все материалы</a>
-    <a class="cta-link" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer">Обсудить задачу →</a>
+    {%- if paired_post -%}
+    <div class="lang-pair-link">
+      {%- if current_lang == 'ru' -%}
+        <a href="{{ paired_post.url }}" class="cta-link">Read in English →</a>
+      {%- else -%}
+        <a href="{{ paired_post.url }}" class="cta-link">Читать на русском →</a>
+      {%- endif -%}
+    </div>
+    {%- endif -%}
+    <a class="back" href="/blog/">
+      {%- if current_lang == 'en' -%}← All articles{%- else -%}← Все материалы{%- endif -%}
+    </a>
+    <a class="cta-link" href="https://t.me/Livesport2" target="_blank" rel="noopener noreferrer">
+      {%- if current_lang == 'en' -%}Discuss a project →{%- else -%}Обсудить задачу →{%- endif -%}
+    </a>
   </div>
 
 </main>
+
+<style>
+.article-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.article-hero {
+  margin-bottom: 28px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.article-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.article-title {
+  font-size: clamp(22px, 3.5vw, 36px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
+.article-meta-row {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--muted, #888);
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+.lang-switcher-post {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.lang-active  { color: var(--gold, #c9a84c); }
+.lang-dot     { color: var(--muted, #666); }
+.lang-inactive {
+  color: var(--muted, #888);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.lang-inactive:hover { color: var(--gold, #c9a84c); }
+.lang-pair-link {
+  margin-bottom: 16px;
+}
+</style>
