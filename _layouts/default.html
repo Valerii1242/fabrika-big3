@@ -182,25 +182,6 @@
     </div>
   </header>
 
-  <script>
-  function setLang(lang) {
-    var btnRu = document.getElementById('btn-ru');
-    var btnEn = document.getElementById('btn-en');
-    if (btnRu) btnRu.style.color = lang==='ru' ? 'var(--gold)' : 'var(--muted)';
-    if (btnEn) btnEn.style.color = lang==='en' ? 'var(--gold)' : 'var(--muted)';
-    document.querySelectorAll('[data-ru]').forEach(function(el) {
-      var val = el.getAttribute('data-' + lang);
-      if (val) el.textContent = val;
-    });
-    document.documentElement.lang = lang;
-    localStorage.setItem('lang', lang);
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    var saved = localStorage.getItem('lang');
-    if (saved && saved !== 'ru') setLang(saved);
-  });
-  </script>
-
   {{ content }}
 
   <footer>
@@ -215,6 +196,23 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  function setLang(lang) {
+    var btnRu = document.getElementById('btn-ru');
+    var btnEn = document.getElementById('btn-en');
+    if (btnRu) btnRu.style.color = lang==='ru' ? 'var(--gold)' : 'var(--muted)';
+    if (btnEn) btnEn.style.color = lang==='en' ? 'var(--gold)' : 'var(--muted)';
+    document.querySelectorAll('[data-ru]').forEach(function(el) {
+      var val = el.getAttribute('data-' + lang);
+      if (val) el.textContent = val;
+    });
+    document.documentElement.lang = lang;
+    localStorage.setItem('lang', lang);
+  }
+  var saved = localStorage.getItem('lang');
+  if (saved && saved !== 'ru') setLang(saved);
+  </script>
 
 </body>
 </html>
