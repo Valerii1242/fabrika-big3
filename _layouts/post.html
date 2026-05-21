@@ -9,7 +9,7 @@ layout: default
     {{ page.date | date: "%d.%m.%Y" }}
   </div>
 
-  <h1>{{ page.title }}</h1>
+  <h1 data-ru="{{ page.title }}" data-en="{{ page.title_en | default: page.title }}">{{ page.title }}</h1>
 
   {%- if page.image -%}
   <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy" />
@@ -25,15 +25,3 @@ layout: default
   </div>
 
 </main>
-
-<script>
-  // Применяем сохранённый язык после того как контент статьи загружен
-  (function() {
-    var saved = localStorage.getItem('lang');
-    if (saved && saved !== 'ru') {
-      if (typeof setLang === 'function') {
-        setLang(saved);
-      }
-    }
-  })();
-</script>
