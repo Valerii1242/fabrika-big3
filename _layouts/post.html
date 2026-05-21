@@ -25,3 +25,15 @@ layout: default
   </div>
 
 </main>
+
+<script>
+  // Применяем сохранённый язык после того как контент статьи загружен
+  (function() {
+    var saved = localStorage.getItem('lang');
+    if (saved && saved !== 'ru') {
+      if (typeof setLang === 'function') {
+        setLang(saved);
+      }
+    }
+  })();
+</script>
