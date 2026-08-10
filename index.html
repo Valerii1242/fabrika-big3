@@ -1243,6 +1243,30 @@
       margin: 0;
       line-height: 1.55;
     }
+    .tenchat-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 16px 28px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    .tenchat-filter-btn {
+      font-family: inherit;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .tenchat-filter-btn:hover { color: var(--text); border-color: rgba(201,171,103,.4); }
+    .tenchat-filter-btn.active { color: var(--gold); border-color: var(--gold); }
+    .tenchat-post.hidden-by-filter { display: none; }
     @media (max-width: 960px) {
       .tenchat-grid { grid-template-columns: 1fr; }
       .tenchat-posts { grid-template-rows: auto; grid-template-columns: repeat(2, 1fr); }
@@ -2289,6 +2313,13 @@
           <!-- Статьи -->
           <div class="tenchat-posts">
 
+            <div class="tenchat-filter">
+              <button type="button" class="tenchat-filter-btn active" data-filter="all" data-ru="Все" data-en="All">Все</button>
+              <button type="button" class="tenchat-filter-btn" data-filter="tag-ma" data-ru="Капитал" data-en="Capital">Капитал</button>
+              <button type="button" class="tenchat-filter-btn" data-filter="tag-ai" data-ru="AI-системы" data-en="AI Systems">AI-системы</button>
+              <button type="button" class="tenchat-filter-btn" data-filter="tag-zg" data-ru="ZG 2.0" data-en="ZG 2.0">ZG 2.0</button>
+            </div>
+
             <a class="tenchat-post tenchat-post--article" href="/blog/sdelochnaya-arkhitektura-chto-stoit-za-ciframi/" style="border-left:2px solid rgba(201,171,103,.45);">
               <span class="tenchat-post-tag tag-ma" data-ru="Сделочная архитектура · Блог" data-en="Deal Architecture · Blog">Сделочная архитектура · Блог</span>
               <h4 data-ru="Сделочная архитектура: что стоит за цифрами" data-en="Deal Architecture: What Lies Behind the Numbers">Сделочная архитектура: что стоит за цифрами</h4>
@@ -2738,6 +2769,24 @@ document.addEventListener('keydown', function(e) {
     });
   }
 });
+function initTenchatFilter() {
+  var filterBtns = document.querySelectorAll('.tenchat-filter-btn');
+  var posts = document.querySelectorAll('.tenchat-post');
+  if (!filterBtns.length || !posts.length) return;
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = btn.getAttribute('data-filter');
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      posts.forEach(function(post) {
+        var tagEl = post.querySelector('.tenchat-post-tag');
+        var matches = filter === 'all' || (tagEl && tagEl.classList.contains(filter));
+        post.classList.toggle('hidden-by-filter', !matches);
+      });
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', initTenchatFilter);
 </script>
 </body>
 </html>
