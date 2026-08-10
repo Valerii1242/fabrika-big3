@@ -1,6 +1,6 @@
 # FABRIKA BIG3 · fabrika-big3.com — правила для Claude Code
 
-Полный стандарт: FABRIKA_BIG3_SITE_ENGINEERING_STANDARD v2.0 (у Валерия и в Проекте 1 Claude).
+Полный стандарт: FABRIKA_BIG3_SITE_ENGINEERING_STANDARD v2.1 (у Валерия и в Проекте 1 Claude).
 Этот файл — не замена стандарта, а его сжатая версия для старта каждой сессии.
 
 ## Repository Identity Gate — обязательно перед любым действием
@@ -65,3 +65,13 @@ diff и гипотезу причины, вернуть Валерию. Не п�
 Блок · Mode · Model · Status (CLOSED/NOT CLOSED/WAITING FOR ACCEPTANCE) ·
 Files changed · Commit (hash/NOT DONE) · Push (SUCCESS/NOT DONE) · Next step
 (один следующий разрешённый шаг).
+
+## PR и Merge — через Claude Code, не через браузер
+
+Валерий не заходит на сайт GitHub вручную для создания Pull Request или Merge.
+После успешного push Claude Code сам предлагает:
+1. MODE: PR_CREATE — создать Pull Request командой (gh pr create), отдельным разрешением Валерия.
+2. MODE: PR_MERGE — смержить PR командой (gh pr merge), отдельным разрешением Валерия, только после проверки отсутствия конфликтов с main.
+
+Разрешение от Валерия — простой текст в чате ("да", "делай", "разрешаю мёрж"). Ручная работа в браузере GitHub не требуется.
+Исключение: если у Claude Code физически нет доступа к GitHub CLI/токену с правом на PR/merge — сообщить об этом явно, и только тогда подсказать ручной шаг в браузере как временный запасной вариант.
